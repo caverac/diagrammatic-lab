@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+dist-test/
+build/
+coverage/
+
+# Caches
+*.tsbuildinfo
+
+# Yarn (node-modules linker)
+.yarn/*
+!.yarn/patches
+.pnp.*
+
+# OS
+.DS_Store
+
+# Editor
+*.swp
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Notes
+notebooks/notes/*

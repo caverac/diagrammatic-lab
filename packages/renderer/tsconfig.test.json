@@ -1,0 +1,15 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist-test",
+    "rootDir": ".",
+    "declaration": false,
+    "declarationMap": false,
+    "composite": false,
+    "isolatedModules": true,
+    "noEmit": true,
+    "types": ["jest", "node"]
+  },
+  "references": [{ "path": "../core" }],
+  "include": ["src/**/*", "test/**/*"]
+}

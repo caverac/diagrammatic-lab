@@ -21,7 +21,6 @@
   "references": [
     { "path": "./packages/core" },
     { "path": "./packages/renderer" },
-    { "path": "./packages/examples" },
-    { "path": "./packages/web" }
+    { "path": "./packages/examples" }
   ]
 }

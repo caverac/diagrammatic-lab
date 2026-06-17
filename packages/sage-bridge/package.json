@@ -1,6 +1,0 @@
-{
-  "name": "@diagrammatic-lab/sage-bridge",
-  "version": "0.0.0",
-  "private": true,
-  "description": "SageMath validation oracle for the core engine (Python, not a build target)"
-}

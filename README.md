@@ -1,4 +1,8 @@
-# diagrammatic-lab
+<p align="center">
+  <img src="assets/logo.svg" width="96" alt="diagrammatic-lab logo" />
+</p>
+
+<h1 align="center">diagrammatic-lab</h1>
 
 A semantic workbench for **diagrammatic algebra** — diagrams as mathematical
 objects, not just pictures. The project is a learning-and-contribution companion
@@ -33,16 +37,15 @@ diagrammatic-lab/
   packages/
     core/         # pure TypeScript algebra engine (no UI deps)
     renderer/     # SVG / TikZ rendering
-    web/          # browser explorer (Phase 2 — UI not yet built)
+    web/          # browser Temperley–Lieb explorer (Vite + React)
     examples/     # worked examples from the book
-    sage-bridge/  # SageMath correctness oracle (Python)
 ```
 
 The central design rule: **the core algebra engine is independent of the UI.**
 
 ## Getting started
 
-Requires Node ≥ 20.19 and Yarn 4 (via Corepack).
+Requires Node ≥ 25 and Yarn 4 (via Corepack). With `nvm`, run `nvm use`.
 
 ```bash
 corepack enable
@@ -57,7 +60,17 @@ yarn format      # Prettier check
 # run the worked example
 yarn workspace @diagrammatic-lab/examples build
 yarn workspace @diagrammatic-lab/examples demo
+
+# launch the browser playground (Vite dev server)
+yarn workspace @diagrammatic-lab/web dev
 ```
+
+## The Temperley–Lieb playground
+
+`packages/web` is an interactive explorer: choose a rank `n`, click two basis
+diagrams of `TL_n`, and see their product `δ^k · D` rendered live, with SVG/TikZ
+export. The UI is a thin React layer over a pure, unit-tested view-model
+(`web/src/model.ts`) that calls straight into `core` and `renderer`.
 
 ## Roadmap
 
@@ -65,8 +78,8 @@ Aligned with the book (see `notebooks/notes/logs/`):
 
 1. **Groups & Coxeter basics** — permutations, reduced words, length, Bruhat
    order for small `Sₙ`.
-2. **Catalan & Temperley–Lieb** _(in progress)_ — diagrams, multiplication, loop
-   removal, basis visualization.
+2. **Catalan & Temperley–Lieb** _(done)_ — diagrams, multiplication, loop
+   removal, basis visualization, and an interactive browser playground.
 3. **Kazhdan–Lusztig explorer** — Bruhat intervals and `P_{x,y}(q)`, with Sage as
    the oracle.
 4. **Diagrammatic rewriting** — local relations turning a diagram into a

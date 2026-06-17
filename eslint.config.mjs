@@ -19,12 +19,13 @@ export default [
   },
   eslint.configs.recommended,
   {
-    files: ['**/*.ts', '**/*.tsx'],
+    files: ['**/*.ts', '**/*.tsx', '**/*.mts', '**/*.cts'],
     languageOptions: {
       parser: tsparser,
       parserOptions: {
         ecmaVersion: 2022,
-        sourceType: 'module'
+        sourceType: 'module',
+        ecmaFeatures: { jsx: true }
       },
       globals: {
         ...globals.node
@@ -60,6 +61,14 @@ export default [
     files: ['**/examples/**/*.ts', '**/*.cli.ts'],
     rules: {
       'no-console': 'off'
+    }
+  },
+  {
+    files: ['packages/web/**/*.{ts,tsx}'],
+    languageOptions: {
+      globals: {
+        ...globals.browser
+      }
     }
   },
   {

@@ -6,4 +6,4 @@ node_modules/
 *.tsbuildinfo
 yarn.lock
 CHANGELOG.md
-**/*.py
+**/*.svg

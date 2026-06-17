@@ -1,0 +1,17 @@
+@import 'tailwindcss';
+
+/* Enable class-based dark mode (toggled by `.dark` on <html>) instead of the
+   default prefers-color-scheme media strategy. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-800 antialiased dark:bg-slate-950 dark:text-slate-100;
+  }
+}

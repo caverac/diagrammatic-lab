@@ -11,8 +11,10 @@ import {
   type Point
 } from './layout'
 
+// Use `currentColor` so the embedding context (e.g. a dark theme) controls the
+// ink colour via CSS `color`.
 function nodeCircle(p: Point): string {
-  return `<circle cx="${p.x}" cy="${p.y}" r="3" fill="#1d2433" />`
+  return `<circle cx="${p.x}" cy="${p.y}" r="3" fill="currentColor" />`
 }
 
 /** Render `d` as an SVG document. */
@@ -22,7 +24,7 @@ export function toSvg(d: TLDiagram, options: LayoutOptions = defaultLayout): str
   const paths = d.arcs.map((arc) => {
     const g = arcGeometry(arc[0], arc[1], options)
     const path = `M ${g.start.x} ${g.start.y} C ${g.control1.x} ${g.control1.y} ${g.control2.x} ${g.control2.y} ${g.end.x} ${g.end.y}`
-    return `<path d="${path}" fill="none" stroke="#1d2433" stroke-width="2" />`
+    return `<path d="${path}" fill="none" stroke="currentColor" stroke-width="2" />`
   })
 
   const nodes: string[] = []

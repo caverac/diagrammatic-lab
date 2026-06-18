@@ -1,7 +1,6 @@
 import { type Theme } from '../theme'
 
 import { LogoMark, MenuIcon, MoonIcon, SunIcon } from './icons'
-import { LoginButton } from './LoginButton'
 
 export interface NavBarProps {
   readonly theme: Theme
@@ -30,9 +29,12 @@ export function NavBar({ theme, onToggleTheme, onMenuToggle }: NavBarProps) {
         <div className="ml-auto flex items-center gap-2">
           <a
             href="https://github.com/caverac/diagrammatic-lab"
-            className="hidden text-sm text-slate-600 transition hover:text-slate-900 sm:block dark:text-slate-300 dark:hover:text-white"
+            className="group hidden flex-col items-end leading-tight sm:flex"
           >
-            GitHub
+            <span className="text-sm text-slate-600 transition group-hover:text-slate-900 dark:text-slate-300 dark:group-hover:text-white">
+              GitHub
+            </span>
+            <span className="text-[10px] text-slate-400">v{__APP_VERSION__}</span>
           </a>
           <button
             type="button"
@@ -42,7 +44,6 @@ export function NavBar({ theme, onToggleTheme, onMenuToggle }: NavBarProps) {
           >
             {theme === 'dark' ? <SunIcon className="h-5 w-5" /> : <MoonIcon className="h-5 w-5" />}
           </button>
-          <LoginButton />
         </div>
       </div>
     </header>

@@ -19,6 +19,14 @@ export default {
         prepareCmd: 'npx prettier --write CHANGELOG.md'
       }
     ],
+    // Writes the next version into package.json (bundled plugin); npmPublish is
+    // off because this is a private monorepo we don't publish to npm.
+    [
+      '@semantic-release/npm',
+      {
+        npmPublish: false
+      }
+    ],
     [
       '@semantic-release/git',
       {

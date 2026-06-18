@@ -54,3 +54,20 @@ export function MoonIcon({ className }: IconProps) {
     </svg>
   )
 }
+
+export function MenuIcon({ className }: IconProps) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M3 6h18M3 12h18M3 18h18" />
+    </svg>
+  )
+}

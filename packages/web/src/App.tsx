@@ -1,4 +1,4 @@
-import { useEffect, type ReactElement } from 'react'
+import { useEffect, useState, type ReactElement } from 'react'
 
 import { ComingSoon } from './components/ComingSoon'
 import { NavBar } from './components/NavBar'
@@ -23,16 +23,26 @@ function renderRoute(route: string): ReactElement {
 export function App() {
   const { theme, toggle } = useTheme()
   const route = useHashRoute()
+  const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     document.title = documentTitle(route)
   }, [route])
 
+  // Close the mobile drawer whenever the route changes.
+  useEffect(() => {
+    setMenuOpen(false)
+  }, [route])
+
   return (
     <div className="flex min-h-full flex-col">
-      <NavBar theme={theme} onToggleTheme={toggle} />
+      <NavBar
+        theme={theme}
+        onToggleTheme={toggle}
+        onMenuToggle={() => setMenuOpen((open) => !open)}
+      />
       <div className="mx-auto flex w-full max-w-6xl flex-1">
-        <Sidebar route={route} />
+        <Sidebar route={route} open={menuOpen} onClose={() => setMenuOpen(false)} />
         <main className="min-w-0 flex-1 px-4 sm:px-6">{renderRoute(route)}</main>
       </div>
     </div>

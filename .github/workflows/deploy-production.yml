@@ -1,0 +1,54 @@
+name: Deploy Production
+
+on:
+  push:
+    branches:
+      - 'release-*'
+
+# OIDC token + repo read; no long-lived AWS credentials.
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    environment: production
+    env:
+      ENVIRONMENT: production
+      AWS_ACCOUNT: ${{ vars.AWS_ACCOUNT_ID }}
+      AWS_REGION: us-east-1
+      ACM_CERTIFICATE_ARN: ${{ vars.ACM_CERTIFICATE_ARN }}
+      GITHUB_REPOSITORY: ${{ github.repository }}
+    steps:
+      - name: Extract version from branch
+        run: |
+          VERSION=${GITHUB_REF#refs/heads/release-}
+          echo "Deploying production from release branch: version ${VERSION}"
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '25'
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Build web app
+        run: yarn workspace @diagrammatic-lab/web build
+
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::${{ vars.AWS_ACCOUNT_ID }}:role/DiagrammaticLab-GitHubActions-Role
+          aws-region: us-east-1
+
+      - name: Deploy web stack
+        run: yarn workspace @diagrammatic-lab/infrastructure cdk deploy DiagrammaticLab-Web --require-approval never

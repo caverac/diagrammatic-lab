@@ -14,6 +14,7 @@ export default [
       '**/dist-test/**',
       '**/build/**',
       '**/coverage/**',
+      '**/cdk.out/**',
       '.yarn/**'
     ]
   },

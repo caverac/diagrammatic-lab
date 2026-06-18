@@ -10,6 +10,11 @@ coverage/
 # Caches
 *.tsbuildinfo
 
+# CDK
+cdk.out/
+**/cdk.out/
+cdk.context.json
+
 # Yarn (node-modules linker)
 .yarn/*
 !.yarn/patches
@@ -28,3 +33,6 @@ __pycache__/
 
 # Notes
 notebooks/notes/*
+
+# Environment variables
+.envrc

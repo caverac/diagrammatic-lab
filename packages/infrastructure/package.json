@@ -1,0 +1,27 @@
+{
+  "name": "@diagrammatic-lab/infrastructure",
+  "version": "0.0.0",
+  "private": true,
+  "description": "AWS CDK infrastructure: web hosting (S3 + CloudFront) and GitHub Actions OIDC",
+  "scripts": {
+    "cdk": "cdk",
+    "synth": "cdk synth",
+    "deploy": "cdk deploy --require-approval never",
+    "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.test.json",
+    "test": "jest"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.233.0",
+    "constructs": "^10.4.4",
+    "zod": "^4.3.5"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^25.9.3",
+    "aws-cdk": "^2.1100.1",
+    "jest": "^30.4.2",
+    "ts-jest": "^29.4.11",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.3"
+  }
+}

@@ -18,17 +18,22 @@ carry algebraic meaning and can be validated, multiplied, and exported.
 
 The MVP core — the `tl-playground` engine — is implemented and tested:
 
-- **Validity**: is a set of arcs a genuine `TL_n` basis diagram? (planar perfect
-  matching: every point has degree one, no arcs cross.)
-- **Basis**: enumerate all `C_n` basis diagrams of `TL_n` and check the count
-  against the Catalan number.
-- **Multiplication**: stack `D₁` over `D₂`, splice the shared row, remove closed
-  loops, and record the power of the loop parameter `δ`:
-  `D₁ · D₂ = δ^k · D₃`.
+- **Validity**: is a set of arcs a genuine $\mathrm{TL}_n$ basis diagram? (a
+  planar perfect matching: every point has degree one and no arcs cross.)
+- **Basis**: enumerate every basis diagram of $\mathrm{TL}_n$ and check the count
+  against the Catalan number $C_n = \frac{1}{n+1}\binom{2n}{n}$.
+- **Multiplication**: stack $D_1$ over $D_2$, splice the shared row, and remove
+  the closed loops, recording one factor of the loop parameter $\delta$ per loop.
 - **Rendering**: export any diagram to **SVG** and **TikZ**.
 
-The defining Temperley–Lieb relations are used as correctness tests:
-`eᵢ·eᵢ = δ·eᵢ`, `eᵢ·eᵢ₊₁·eᵢ = eᵢ`, and `eᵢ·eⱼ = eⱼ·eᵢ` for `|i−j| ≥ 2`.
+Multiplication of diagrams is therefore
+
+$$D_1 \cdot D_2 = \delta^{k}\, D_3,$$
+
+where $k$ is the number of closed loops removed. The defining Temperley–Lieb
+relations serve as correctness tests:
+
+$$e_i e_i = \delta\, e_i, \qquad e_i\, e_{i\pm 1}\, e_i = e_i, \qquad e_i e_j = e_j e_i \quad (|i - j| \ge 2).$$
 
 ## Monorepo layout
 
@@ -39,6 +44,7 @@ diagrammatic-lab/
     renderer/     # SVG / TikZ rendering
     web/          # browser Temperley–Lieb explorer (Vite + React)
     examples/     # worked examples from the book
+    infrastructure/  # AWS CDK: S3 + CloudFront hosting and GitHub OIDC
 ```
 
 The central design rule: **the core algebra engine is independent of the UI.**
@@ -67,20 +73,21 @@ yarn workspace @diagrammatic-lab/web dev
 
 ## The Temperley–Lieb playground
 
-`packages/web` is an interactive explorer: choose a rank `n`, click two basis
-diagrams of `TL_n`, and see their product `δ^k · D` rendered live, with SVG/TikZ
-export. The UI is a thin React layer over a pure, unit-tested view-model
-(`web/src/model.ts`) that calls straight into `core` and `renderer`.
+`packages/web` is an interactive explorer: choose a rank $n$, drag two basis
+diagrams of $\mathrm{TL}_n$ onto the slots, and see their product $\delta^k\, D$
+rendered live, with SVG/TikZ export. The UI is a thin React layer over a pure,
+unit-tested view-model (`web/src/model.ts`) that calls straight into `core` and
+`renderer`.
 
 ## Roadmap
 
 Aligned with the book (see `notebooks/notes/logs/`):
 
 1. **Groups & Coxeter basics** — permutations, reduced words, length, Bruhat
-   order for small `Sₙ`.
+   order for small $S_n$.
 2. **Catalan & Temperley–Lieb** _(done)_ — diagrams, multiplication, loop
    removal, basis visualization, and an interactive browser playground.
-3. **Kazhdan–Lusztig explorer** — Bruhat intervals and `P_{x,y}(q)`, with Sage as
+3. **Kazhdan–Lusztig explorer** — Bruhat intervals and $P_{x,y}(q)$, with Sage as
    the oracle.
 4. **Diagrammatic rewriting** — local relations turning a diagram into a
    normalized linear combination.

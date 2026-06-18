@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/caverac/diagrammatic-lab/compare/v1.2.0...v1.3.0) (2026-06-18)
+
+
+### Features
+
+* **web:** show app version in the nav bar and fix release versioning ([6a3ba92](https://github.com/caverac/diagrammatic-lab/commit/6a3ba9279f315b64f030e59133fda5dd9ed964ea))
+
 # [1.2.0](https://github.com/caverac/diagrammatic-lab/compare/v1.1.0...v1.2.0) (2026-06-18)
 
 

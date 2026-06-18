@@ -1,6 +1,6 @@
 {
   "name": "diagrammatic-lab",
-  "version": "0.0.0",
+  "version": "1.3.0",
   "private": true,
   "description": "A semantic workbench for diagrammatic algebra — Temperley–Lieb diagrams, Coxeter groups, and Kazhdan–Lusztig theory",
   "packageManager": "yarn@4.14.1",

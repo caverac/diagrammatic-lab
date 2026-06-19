@@ -1,11 +1,11 @@
 import { useState } from 'react'
 
+import { Math } from '../../../components/Math'
 import { DIAGRAM_INDEX_MIME, parseDropIndex, type SlotId } from '../dnd'
-import { coefficientTex } from '../math'
 import { type DiagramView, type ProductView } from '../model'
+import { coefficientTex } from '../tex'
 
 import { DiagramFigure } from './DiagramFigure'
-import { Math } from './Math'
 
 export type ExportFormat = 'svg' | 'tikz'
 

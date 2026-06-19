@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - 'release-*'
+  # Manual trigger — works even when the branch tip is a semantic-release
+  # "[skip ci]" commit (which suppresses push-triggered runs).
+  workflow_dispatch:
 
 # OIDC token + repo read; no long-lived AWS credentials.
 permissions:

@@ -1,8 +1,11 @@
 name: Deploy Development
 
+# Runs after the Release workflow so the version bump semantic-release commits
+# to main is already in place — the deployed bundle matches the latest release.
 on:
-  push:
-    branches: [main]
+  workflow_run:
+    workflows: ['Release']
+    types: [completed]
 
 # OIDC token + repo read; no long-lived AWS credentials.
 permissions:
@@ -13,6 +16,8 @@ jobs:
   deploy:
     name: Deploy to Development
     runs-on: ubuntu-latest
+    # Only after a successful Release on main.
+    if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main' }}
     environment: development
     env:
       ENVIRONMENT: development
@@ -23,6 +28,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          # workflow_run defaults to the triggering SHA (pre-bump); take main's
+          # tip, which includes the release commit.
+          ref: main
 
       - name: Setup Node.js
         uses: actions/setup-node@v4

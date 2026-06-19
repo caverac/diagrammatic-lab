@@ -1,3 +1,4 @@
+import { MathText } from '../components/MathText'
 import { toHash } from '../router'
 import { TOOLS, type ToolMeta } from '../tools'
 
@@ -20,7 +21,9 @@ function ToolCard({ tool }: { tool: ToolMeta }) {
           </span>
         )}
       </div>
-      <p className="mt-2 flex-1 text-sm text-slate-600 dark:text-slate-400">{tool.tagline}</p>
+      <p className="mt-2 flex-1 text-sm text-slate-600 dark:text-slate-400">
+        <MathText>{tool.tagline}</MathText>
+      </p>
       <span className="mt-4 text-sm font-medium text-indigo-600 dark:text-indigo-400">
         {available ? 'Open playground →' : 'Learn more →'}
       </span>

@@ -1,4 +1,22 @@
-import { renderMath } from '../src/math'
+import { parseInlineMath, renderMath } from '../src/math'
+
+describe('parseInlineMath', () => {
+  it('returns a single text run when there is no math', () => {
+    expect(parseInlineMath('plain prose')).toEqual([{ type: 'text', value: 'plain prose' }])
+  })
+
+  it('splits prose and inline math', () => {
+    expect(parseInlineMath('order in $S_n$ here')).toEqual([
+      { type: 'text', value: 'order in ' },
+      { type: 'math', value: 'S_n' },
+      { type: 'text', value: ' here' }
+    ])
+  })
+
+  it('drops the empty runs around leading/trailing math', () => {
+    expect(parseInlineMath('$x$')).toEqual([{ type: 'math', value: 'x' }])
+  })
+})
 
 describe('renderMath', () => {
   it('renders LaTeX to KaTeX HTML', () => {

@@ -17,19 +17,19 @@ export const TOOLS: readonly ToolMeta[] = [
   {
     id: 'temperley-lieb',
     name: 'Temperley–Lieb',
-    tagline: 'Multiply diagrams in TLₙ(δ) by stacking',
+    tagline: 'Multiply diagrams in $\\mathrm{TL}_n(\\delta)$ by stacking',
     status: 'available'
   },
   {
     id: 'coxeter',
     name: 'Coxeter Groups',
-    tagline: 'Reduced words, length, and Bruhat order in Sₙ',
+    tagline: 'Reduced words, length, and Bruhat order in $S_n$',
     status: 'coming-soon'
   },
   {
     id: 'kazhdan-lusztig',
     name: 'Kazhdan–Lusztig',
-    tagline: 'Bruhat intervals and KL polynomials',
+    tagline: 'Bruhat intervals and the polynomials $P_{x,y}(q)$',
     status: 'coming-soon'
   },
   {

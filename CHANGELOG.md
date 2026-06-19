@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/caverac/diagrammatic-lab/compare/v1.3.1...v1.3.2) (2026-06-19)
+
+
+### Bug Fixes
+
+* **web:** use katex at the home cards ([df8461b](https://github.com/caverac/diagrammatic-lab/commit/df8461baedf0598e12dbd607ae0e09e9df1542ea))
+
 ## [1.3.1](https://github.com/caverac/diagrammatic-lab/compare/v1.3.0...v1.3.1) (2026-06-19)
 
 

@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/caverac/diagrammatic-lab/compare/v1.3.0...v1.3.1) (2026-06-19)
+
+
+### Bug Fixes
+
+* **workflows:** ci not triggering for production releases ([a480a03](https://github.com/caverac/diagrammatic-lab/commit/a480a03791fdee2a8351a535c936639b79b6b317))
+
 # [1.3.0](https://github.com/caverac/diagrammatic-lab/compare/v1.2.0...v1.3.0) (2026-06-18)
 
 

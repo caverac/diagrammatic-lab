@@ -12,5 +12,5 @@
       "@diagrammatic-lab/renderer": ["../renderer/src/index.ts"]
     }
   },
-  "include": ["src/model.ts", "test/**/*"]
+  "include": ["test/**/*"]
 }

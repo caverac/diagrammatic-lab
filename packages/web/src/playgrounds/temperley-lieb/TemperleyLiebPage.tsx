@@ -1,11 +1,12 @@
 import { useMemo, useState } from 'react'
 
-import { BasisPalette } from '../components/BasisPalette'
-import { Math } from '../components/Math'
-import { ProductPanel, type ExportFormat } from '../components/ProductPanel'
-import { type SlotId } from '../dnd'
-import { temperleyLiebTex } from '../math'
-import { buildExplorerState, computeProduct, type DiagramView } from '../model'
+import { Math } from '../../components/Math'
+
+import { BasisPalette } from './components/BasisPalette'
+import { ProductPanel, type ExportFormat } from './components/ProductPanel'
+import { type SlotId } from './dnd'
+import { buildExplorerState, computeProduct, type DiagramView } from './model'
+import { temperleyLiebTex } from './tex'
 
 const RANKS = [1, 2, 3, 4, 5] as const
 

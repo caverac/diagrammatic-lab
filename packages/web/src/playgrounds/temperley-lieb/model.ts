@@ -21,12 +21,11 @@ export interface ExplorerState {
   readonly basis: readonly DiagramView[]
 }
 
-/** A computed product `D₁ · D₂ = δ^k · D₃`, rendered and labelled. */
+/** A computed product `D₁ · D₂ = δ^k · D₃`, rendered for display. */
 export interface ProductView {
   readonly product: TLProduct
   readonly svg: string
   readonly tikz: string
-  readonly coefficient: string
 }
 
 /** Render a diagram to SVG and pair it with the diagram itself. */
@@ -39,24 +38,12 @@ export function buildExplorerState(rank: number): ExplorerState {
   return { rank, basis: enumerateBasis(rank).map(viewOf) }
 }
 
-/** Format the loop count as a `δ` coefficient: `''`, `'δ'`, or `'δ^k'`. */
-export function formatCoefficient(loops: number): string {
-  if (loops === 0) {
-    return ''
-  }
-  if (loops === 1) {
-    return 'δ'
-  }
-  return `δ^${loops}`
-}
-
 /** Multiply two diagrams and render the result for display. */
 export function computeProduct(a: TLDiagram, b: TLDiagram): ProductView {
   const product = multiply(a, b)
   return {
     product,
     svg: toSvg(product.diagram),
-    tikz: toTikz(product.diagram),
-    coefficient: formatCoefficient(product.loops)
+    tikz: toTikz(product.diagram)
   }
 }

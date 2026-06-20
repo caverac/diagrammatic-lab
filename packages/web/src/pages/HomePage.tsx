@@ -25,7 +25,7 @@ function ToolCard({ tool }: { tool: ToolMeta }) {
         <MathText>{tool.tagline}</MathText>
       </p>
       <span className="mt-4 text-sm font-medium text-indigo-600 dark:text-indigo-400">
-        {available ? 'Open playground →' : 'Learn more →'}
+        {available ? 'Open playground ->' : 'Learn more ->'}
       </span>
     </a>
   )
@@ -37,7 +37,7 @@ export function HomePage() {
       <section className="mb-10 max-w-2xl">
         <h1 className="text-3xl font-bold tracking-tight">diagrammatic-lab</h1>
         <p className="mt-3 leading-relaxed text-slate-600 dark:text-slate-400">
-          An interactive workbench for <em>diagrammatic algebra</em> — diagrams as mathematical
+          An interactive workbench for <em>diagrammatic algebra</em> - diagrams as mathematical
           objects you can build, multiply, and rewrite. A companion to Chris Bowman&rsquo;s{' '}
           <em>Diagrammatic Algebra</em>, growing one playground at a time.
         </p>

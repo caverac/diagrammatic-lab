@@ -16,8 +16,14 @@ export interface ToolMeta {
 export const TOOLS: readonly ToolMeta[] = [
   {
     id: 'temperley-lieb',
-    name: 'Temperley–Lieb',
+    name: 'Temperley-Lieb',
     tagline: 'Multiply diagrams in $\\mathrm{TL}_n(\\delta)$ by stacking',
+    status: 'available'
+  },
+  {
+    id: 'mobius',
+    name: 'Mobius & Finite Groups',
+    tagline: 'Finite subgroups of $\\mathrm{PSL}_2(\\mathbb{C})$ as rotation orbits on the sphere',
     status: 'available'
   },
   {
@@ -28,7 +34,7 @@ export const TOOLS: readonly ToolMeta[] = [
   },
   {
     id: 'kazhdan-lusztig',
-    name: 'Kazhdan–Lusztig',
+    name: 'Kazhdan-Lusztig',
     tagline: 'Bruhat intervals and the polynomials $P_{x,y}(q)$',
     status: 'coming-soon'
   },
@@ -48,8 +54,8 @@ export function findTool(id: string): ToolMeta | undefined {
   return TOOLS.find((tool) => tool.id === id)
 }
 
-/** The browser tab title for a route, e.g. `Temperley–Lieb · diagrammatic-lab`. */
+/** The browser tab title for a route, e.g. `Temperley-Lieb . diagrammatic-lab`. */
 export function documentTitle(route: string): string {
   const tool = findTool(route)
-  return tool ? `${tool.name} · ${APP_NAME}` : APP_NAME
+  return tool ? `${tool.name} . ${APP_NAME}` : APP_NAME
 }

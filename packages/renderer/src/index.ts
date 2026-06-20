@@ -1,5 +1,5 @@
 /**
- * `@diagrammatic-lab/renderer` — turn a {@link TLDiagram} into pictures.
+ * `@diagrammatic-lab/renderer` - turn a {@link TLDiagram} into pictures.
  *
  * {@link toSvg} produces a standalone SVG document; {@link toTikz} produces a
  * `tikzpicture` for inclusion in LaTeX notes. Both share the geometry exposed

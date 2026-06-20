@@ -1,7 +1,7 @@
 name: Deploy Development
 
 # Runs after the Release workflow so the version bump semantic-release commits
-# to main is already in place — the deployed bundle matches the latest release.
+# to main is already in place - the deployed bundle matches the latest release.
 on:
   workflow_run:
     workflows: ['Release']

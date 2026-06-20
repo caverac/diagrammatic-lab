@@ -1,4 +1,4 @@
-/** Render a Temperley–Lieb diagram to a standalone SVG string. */
+/** Render a Temperley-Lieb diagram to a standalone SVG string. */
 
 import { type TLDiagram } from '@diagrammatic-lab/core'
 

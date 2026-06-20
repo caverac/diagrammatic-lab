@@ -1,7 +1,7 @@
 /**
  * Geometry shared by the rendering back-ends.
  *
- * Nodes sit on two horizontal rows; an arc is drawn as a cubic Bézier curve.
+ * Nodes sit on two horizontal rows; an arc is drawn as a cubic Bezier curve.
  * Through-strands (joining the two rows) curve gently, while cups and caps
  * (joining points on the same row) bulge into the strip so the diagram reads
  * the way it is drawn in the book.
@@ -15,7 +15,7 @@ export interface Point {
   readonly y: number
 }
 
-/** The four control points of the cubic Bézier drawn for one arc. */
+/** The four control points of the cubic Bezier drawn for one arc. */
 export interface ArcGeometry {
   readonly start: Point
   readonly control1: Point
@@ -53,7 +53,7 @@ export function canvasSize(
   return { width, height }
 }
 
-/** The Bézier control points for the arc joining two endpoints. */
+/** The Bezier control points for the arc joining two endpoints. */
 export function arcGeometry(a: Endpoint, b: Endpoint, options: LayoutOptions): ArcGeometry {
   const start = pointOf(a, options)
   const end = pointOf(b, options)

@@ -74,7 +74,7 @@ export function ProductPanel({
     <section className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
       <div className="flex flex-wrap items-center gap-4">
         <Slot label="D_1" view={left} onDropIndex={(index) => onDropToSlot('left', index)} />
-        <span className="text-2xl text-slate-400">·</span>
+        <Math tex="\cdot" className="text-2xl text-slate-400" />
         <Slot label="D_2" view={right} onDropIndex={(index) => onDropToSlot('right', index)} />
         <span className="text-2xl text-slate-400">=</span>
         <div className="flex min-h-24 min-w-28 items-center justify-center gap-2 rounded-lg border border-slate-200 p-3 dark:border-slate-700">

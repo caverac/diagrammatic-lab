@@ -31,7 +31,7 @@ describe('findTool', () => {
 
 describe('documentTitle', () => {
   it('names the active tool, falling back to the app name', () => {
-    expect(documentTitle('temperley-lieb')).toBe('Temperley–Lieb · diagrammatic-lab')
+    expect(documentTitle('temperley-lieb')).toBe('Temperley-Lieb . diagrammatic-lab')
     expect(documentTitle('')).toBe('diagrammatic-lab')
     expect(documentTitle('nope')).toBe('diagrammatic-lab')
   })

@@ -1,15 +1,15 @@
 /**
- * Catalan combinatorics for the Temperley–Lieb basis.
+ * Catalan combinatorics for the Temperley-Lieb basis.
  *
  * The number of `TL_n` basis diagrams equals the `n`-th Catalan number
- * `C_n = (1/(n+1)) · C(2n, n)`, because both count non-crossing perfect
+ * `C_n = (1/(n+1)) . C(2n, n)`, because both count non-crossing perfect
  * matchings of `2n` points on a line. {@link enumerateBasis} generates them
  * all, and the test suite checks that the count agrees with {@link catalan}.
  */
 
 import { diagram, fromBoundaryIndex, type Arc, type TLDiagram } from './diagram'
 
-/** The `n`-th Catalan number, via the recurrence `C_{n+1} = Σ C_i C_{n-i}`. */
+/** The `n`-th Catalan number, via the recurrence `C_{n+1} = Sigma C_i C_{n-i}`. */
 export function catalan(n: number): number {
   if (!Number.isInteger(n) || n < 0) {
     throw new RangeError(`catalan expects a non-negative integer, got ${n}`)
@@ -29,7 +29,7 @@ export function catalan(n: number): number {
  * All non-crossing perfect matchings of the boundary indices `seq`, returned as
  * lists of index pairs. The first point `seq[0]` is matched to some later point
  * `seq[j]` with `j` odd, so that the arc splits the rest into two even runs that
- * are themselves matched non-crossingly — the standard Catalan recursion.
+ * are themselves matched non-crossingly - the standard Catalan recursion.
  */
 function nonCrossingMatchings(seq: readonly number[]): Array<Array<[number, number]>> {
   if (seq.length === 0) {

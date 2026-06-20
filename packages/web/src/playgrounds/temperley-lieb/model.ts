@@ -1,8 +1,8 @@
 /**
- * The framework-independent view-model for the Temperley–Lieb playground.
+ * The framework-independent view-model for the Temperley-Lieb playground.
  *
- * Everything the UI needs is computed here as plain data — basis palettes,
- * products, and rendered SVG/TikZ — so the React layer stays thin and this
+ * Everything the UI needs is computed here as plain data - basis palettes,
+ * products, and rendered SVG/TikZ - so the React layer stays thin and this
  * logic is unit-tested without a DOM.
  */
 
@@ -21,7 +21,7 @@ export interface ExplorerState {
   readonly basis: readonly DiagramView[]
 }
 
-/** A computed product `D₁ · D₂ = δ^k · D₃`, rendered for display. */
+/** A computed product `D_1 . D_2 = delta^k . D_3`, rendered for display. */
 export interface ProductView {
   readonly product: TLProduct
   readonly svg: string

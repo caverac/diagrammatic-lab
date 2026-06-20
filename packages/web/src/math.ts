@@ -11,14 +11,14 @@ export function renderMath(tex: string, displayMode: boolean): string {
   return katex.renderToString(tex, { throwOnError: false, displayMode })
 }
 
-/** A run of prose or a run of inline LaTeX, parsed from a `$…$` string. */
+/** A run of prose or a run of inline LaTeX, parsed from a `$...$` string. */
 export type InlineSegment =
   | { readonly type: 'text'; readonly value: string }
   | { readonly type: 'math'; readonly value: string }
 
 /**
  * Split a string into alternating text / inline-math segments on `$` delimiters,
- * e.g. `"in $S_n$"` → `[text "in ", math "S_n"]`. Empty runs are dropped.
+ * e.g. `"in $S_n$"` -> `[text "in ", math "S_n"]`. Empty runs are dropped.
  */
 export function parseInlineMath(text: string): InlineSegment[] {
   const segments: InlineSegment[] = []

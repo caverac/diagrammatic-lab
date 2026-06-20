@@ -12,7 +12,7 @@ module.exports = {
     '^@diagrammatic-lab/renderer$': '<rootDir>/../renderer/src/index.ts'
   },
   // All source logic is covered by default; only the non-unit-tested files are
-  // excluded — React components (.tsx) are skipped automatically, hooks are thin
+  // excluded - React components (.tsx) are skipped automatically, hooks are thin
   // DOM wrappers, and .d.ts has nothing to run.
   collectCoverageFrom: ['src/**/*.ts', '!src/hooks/**', '!src/**/*.d.ts'],
   coverageThreshold: {

@@ -6,6 +6,7 @@ import { Sidebar } from './components/Sidebar'
 import { useHashRoute } from './hooks/useHashRoute'
 import { useTheme } from './hooks/useTheme'
 import { HomePage } from './pages/HomePage'
+import { CoxeterPage } from './playgrounds/coxeter/CoxeterPage'
 import { MobiusPage } from './playgrounds/mobius/MobiusPage'
 import { TemperleyLiebPage } from './playgrounds/temperley-lieb/TemperleyLiebPage'
 import { documentTitle, findTool } from './tools'
@@ -16,6 +17,9 @@ function renderRoute(route: string): ReactElement {
   }
   if (route === 'mobius') {
     return <MobiusPage />
+  }
+  if (route === 'coxeter') {
+    return <CoxeterPage />
   }
   const tool = findTool(route)
   if (tool) {

@@ -42,7 +42,7 @@ export const TOOLS: readonly ToolMeta[] = [
     id: 'rewriting',
     name: 'Diagram Rewriting',
     tagline: 'Apply local relations to reach a normal form',
-    status: 'coming-soon'
+    status: 'available'
   }
 ]
 
@@ -54,8 +54,8 @@ export function findTool(id: string): ToolMeta | undefined {
   return TOOLS.find((tool) => tool.id === id)
 }
 
-/** The browser tab title for a route, e.g. `Temperley-Lieb . diagrammatic-lab`. */
+/** The browser tab title for a route, e.g. `Temperley-Lieb \u00b7 diagrammatic-lab`. */
 export function documentTitle(route: string): string {
   const tool = findTool(route)
-  return tool ? `${tool.name} . ${APP_NAME}` : APP_NAME
+  return tool ? `${tool.name} \u00b7 ${APP_NAME}` : APP_NAME
 }

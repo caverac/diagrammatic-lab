@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/caverac/diagrammatic-lab/compare/v1.5.0...v1.5.1) (2026-06-21)
+
+
+### Bug Fixes
+
+* **coxeter:** fixed card widths ([42c6c30](https://github.com/caverac/diagrammatic-lab/commit/42c6c30d8bb75eb43eda8ab0e18c9619635f0996))
+
 # [1.5.0](https://github.com/caverac/diagrammatic-lab/compare/v1.4.0...v1.5.0) (2026-06-21)
 
 

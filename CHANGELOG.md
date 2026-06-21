@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/caverac/diagrammatic-lab/compare/v1.5.1...v1.6.0) (2026-06-21)
+
+
+### Features
+
+* **playgrounds:** added kazshdan-luszrig draft ([de20919](https://github.com/caverac/diagrammatic-lab/commit/de2091959838d29c2cbc116c9dbcac10effa1ac0))
+
 ## [1.5.1](https://github.com/caverac/diagrammatic-lab/compare/v1.5.0...v1.5.1) (2026-06-21)
 
 

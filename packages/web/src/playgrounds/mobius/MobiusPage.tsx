@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState, type PointerEvent, type ReactNode } from 'react'
+import { useEffect, useMemo, useRef, useState, type PointerEvent, type ReactNode } from 'react'
 
 import { Math } from '../../components/Math'
 
@@ -52,6 +52,23 @@ const Y_AXIS = vec3(0, 1, 0)
 const DRAG_SPEED = 0.01
 const INITIAL_VIEW = quatMul(rotationQuat(X_AXIS, -0.42), rotationQuat(Y_AXIS, 0.5))
 
+// Inertia: how fast the spin decays per frame, the per-component speed cap, and
+// the speed below which the spin stops.
+const FRICTION = 0.94
+const MAX_SPIN = 0.18
+const MIN_SPIN = 0.0008
+
+function clamp(value: number, limit: number): number {
+  if (value < -limit) return -limit
+  if (value > limit) return limit
+  return value
+}
+
+/** Whether an angular velocity is fast enough to keep spinning. */
+function spinning(vx: number, vy: number): boolean {
+  return vx * vx + vy * vy >= MIN_SPIN * MIN_SPIN
+}
+
 /** Seed presets for the orbit-stabilizer lab, with their meaning. */
 const POLY_PRESETS: readonly { id: SeedPreset; label: ReactNode }[] = [
   { id: 'generic', label: 'Generic point' },
@@ -90,6 +107,18 @@ export function MobiusPage() {
   const [preset, setPreset] = useState<SeedPreset>('vertex')
   const [showAxes, setShowAxes] = useState(false)
   const drag = useRef<{ x: number; y: number } | null>(null)
+  const velocity = useRef({ x: 0, y: 0 })
+  const spinFrame = useRef<number | null>(null)
+
+  // Stop any running momentum spin when the component unmounts.
+  useEffect(
+    () => () => {
+      if (spinFrame.current !== null) {
+        cancelAnimationFrame(spinFrame.current)
+      }
+    },
+    []
+  )
 
   const group = useMemo(() => buildGroup(groupId, n), [groupId, n])
   const triangles = useMemo(() => schwarzTiling(group), [group])
@@ -107,7 +136,28 @@ export function MobiusPage() {
   const trace = traceMobius(mobius)
   const klass = classifyMobius(mobius)
 
+  function spin(dx: number, dy: number): void {
+    const delta = quatMul(rotationQuat(Y_AXIS, dx), rotationQuat(X_AXIS, dy))
+    setView((current) => quatMul(delta, current))
+  }
+
+  function coast(): void {
+    const v = velocity.current
+    if (!spinning(v.x, v.y)) {
+      spinFrame.current = null
+      return
+    }
+    spin(v.x, v.y)
+    velocity.current = { x: v.x * FRICTION, y: v.y * FRICTION }
+    spinFrame.current = requestAnimationFrame(coast)
+  }
+
   function onPointerDown(event: PointerEvent<HTMLDivElement>): void {
+    if (spinFrame.current !== null) {
+      cancelAnimationFrame(spinFrame.current)
+      spinFrame.current = null
+    }
+    velocity.current = { x: 0, y: 0 }
     drag.current = { x: event.clientX, y: event.clientY }
     event.currentTarget.setPointerCapture(event.pointerId)
   }
@@ -120,12 +170,27 @@ export function MobiusPage() {
     const dx = (event.clientX - last.x) * DRAG_SPEED
     const dy = (event.clientY - last.y) * DRAG_SPEED
     drag.current = { x: event.clientX, y: event.clientY }
-    const delta = quatMul(rotationQuat(Y_AXIS, dx), rotationQuat(X_AXIS, dy))
-    setView((current) => quatMul(delta, current))
+    spin(dx, dy)
+    // Track angular velocity (smoothed and capped) to throw on release.
+    velocity.current = {
+      x: clamp(dx, MAX_SPIN) * 0.7 + velocity.current.x * 0.3,
+      y: clamp(dy, MAX_SPIN) * 0.7 + velocity.current.y * 0.3
+    }
   }
 
   function onPointerUp(): void {
     drag.current = null
+    if (spinFrame.current === null && spinning(velocity.current.x, velocity.current.y)) {
+      spinFrame.current = requestAnimationFrame(coast)
+    }
+  }
+
+  // Switch groups, resetting the seed to the best default: a generic point (an
+  // n-gon ring) for the cyclic/dihedral families, a vertex (the polyhedron) for
+  // the polyhedral ones. On an axis, a cyclic orbit would collapse to a point.
+  function chooseGroup(id: GroupId): void {
+    setGroupId(id)
+    setPreset(PARAMETRIC.has(id) ? 'generic' : 'vertex')
   }
 
   return (
@@ -147,7 +212,7 @@ export function MobiusPage() {
           <button
             key={id}
             type="button"
-            onClick={() => setGroupId(id)}
+            onClick={() => chooseGroup(id)}
             className={id === groupId ? selected : unselected}
           >
             {groupName(id)}

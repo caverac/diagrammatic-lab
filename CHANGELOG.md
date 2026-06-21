@@ -1,3 +1,15 @@
+# [1.5.0](https://github.com/caverac/diagrammatic-lab/compare/v1.4.0...v1.5.0) (2026-06-21)
+
+
+### Bug Fixes
+
+* **coxeter:** responsive layout ([5e9abcb](https://github.com/caverac/diagrammatic-lab/commit/5e9abcb36f902cc0648634ca050b1f3ca48eae43))
+
+
+### Features
+
+* **playgrounds:** added coxeter draft ([f7df4b9](https://github.com/caverac/diagrammatic-lab/commit/f7df4b9d15b79288e3ee17124d9502e7e9da5a1d))
+
 # [1.4.0](https://github.com/caverac/diagrammatic-lab/compare/v1.3.2...v1.4.0) (2026-06-21)
 
 

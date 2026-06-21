@@ -21,7 +21,7 @@ import {
   type GroupId,
   type Quaternion,
   type Vec3
-} from './model'
+} from '@core/mobius'
 
 const EPS = 1e-9
 const KEY_PLACES = 6

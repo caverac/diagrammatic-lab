@@ -1,5 +1,5 @@
-import { HOME_ROUTE, parseHash, toHash } from '../src/router'
-import { documentTitle, findTool } from '../src/tools'
+import { HOME_ROUTE, parseHash, toHash } from '@/router'
+import { documentTitle, findTool } from '@/tools'
 
 describe('parseHash', () => {
   it('reads the route id out of a hash', () => {

@@ -1,6 +1,5 @@
-import { parseInlineMath } from '../math'
-
-import { Math } from './Math'
+import { Math } from '@/components/Math'
+import { parseInlineMath } from '@/math'
 
 /** Render a string that mixes prose with inline `$...$` LaTeX (typeset by KaTeX). */
 export interface MathTextProps {

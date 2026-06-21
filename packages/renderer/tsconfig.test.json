@@ -8,7 +8,11 @@
     "composite": false,
     "isolatedModules": true,
     "noEmit": true,
-    "types": ["jest", "node"]
+    "types": ["jest", "node"],
+    "paths": {
+      "@renderer/*": ["./src/*"],
+      "@core/*": ["../core/src/*"]
+    }
   },
   "references": [{ "path": "../core" }],
   "include": ["src/**/*", "test/**/*"]

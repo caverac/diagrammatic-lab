@@ -7,7 +7,7 @@
  * pin down the basis, and they are exactly what we check here.
  */
 
-import { boundaryIndex, endpointEquals, type Endpoint, type TLDiagram } from './diagram'
+import { boundaryIndex, endpointEquals, type Endpoint, type TLDiagram } from '@core/diagram'
 
 /** A diagnostic result: whether the diagram is valid and, if not, why. */
 export interface ValidationResult {

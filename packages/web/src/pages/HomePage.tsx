@@ -1,6 +1,6 @@
-import { MathText } from '../components/MathText'
-import { toHash } from '../router'
-import { TOOLS, type ToolMeta } from '../tools'
+import { MathText } from '@/components/MathText'
+import { toHash } from '@/router'
+import { TOOLS, type ToolMeta } from '@/tools'
 
 function ToolCard({ tool }: { tool: ToolMeta }) {
   const available = tool.status === 'available'
@@ -25,7 +25,8 @@ function ToolCard({ tool }: { tool: ToolMeta }) {
         <MathText>{tool.tagline}</MathText>
       </p>
       <span className="mt-4 text-sm font-medium text-indigo-600 dark:text-indigo-400">
-        {available ? 'Open playground ->' : 'Learn more ->'}
+        {/* Written as a unicode escape so the source stays ASCII. */}
+        {available ? 'Open playground \u2192' : 'Learn more \u2192'}
       </span>
     </a>
   )

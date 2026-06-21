@@ -3,7 +3,11 @@
   "compilerOptions": {
     "outDir": "./dist",
     "rootDir": "./src",
-    "composite": true
+    "composite": true,
+    "paths": {
+      "@renderer/*": ["./src/*"],
+      "@core/*": ["../core/src/*"]
+    }
   },
   "references": [{ "path": "../core" }],
   "include": ["src/**/*"],

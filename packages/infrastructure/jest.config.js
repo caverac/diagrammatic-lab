@@ -6,5 +6,8 @@ module.exports = {
   testMatch: ['**/*.test.ts'],
   transform: {
     '^.+\\.ts$': ['ts-jest', { tsconfig: 'tsconfig.test.json' }]
+  },
+  moduleNameMapper: {
+    '^@infra/(.*)$': '<rootDir>/src/$1'
   }
 }

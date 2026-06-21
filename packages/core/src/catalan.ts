@@ -7,7 +7,7 @@
  * all, and the test suite checks that the count agrees with {@link catalan}.
  */
 
-import { diagram, fromBoundaryIndex, type Arc, type TLDiagram } from './diagram'
+import { diagram, fromBoundaryIndex, type Arc, type TLDiagram } from '@core/diagram'
 
 /** The `n`-th Catalan number, via the recurrence `C_{n+1} = Sigma C_i C_{n-i}`. */
 export function catalan(n: number): number {

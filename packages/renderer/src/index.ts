@@ -6,8 +6,8 @@
  * by {@link arcGeometry} and friends.
  */
 
-export type { ArcGeometry, LayoutOptions, Point } from './layout'
-export { arcGeometry, canvasSize, defaultLayout, diagramGeometry, pointOf } from './layout'
+export type { ArcGeometry, LayoutOptions, Point } from '@renderer/layout'
+export { arcGeometry, canvasSize, defaultLayout, diagramGeometry, pointOf } from '@renderer/layout'
 
-export { toSvg } from './svg'
-export { toTikz } from './tikz'
+export { toSvg } from '@renderer/svg'
+export { toTikz } from '@renderer/tikz'

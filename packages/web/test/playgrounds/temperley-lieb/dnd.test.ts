@@ -1,4 +1,4 @@
-import { parseDropIndex } from '../../../src/playgrounds/temperley-lieb/dnd'
+import { parseDropIndex } from '@/playgrounds/temperley-lieb/dnd'
 
 describe('parseDropIndex', () => {
   it('accepts non-negative integers', () => {

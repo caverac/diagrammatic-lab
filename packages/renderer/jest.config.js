@@ -8,6 +8,8 @@ module.exports = {
     '^.+\\.ts$': ['ts-jest', { tsconfig: 'tsconfig.test.json' }]
   },
   moduleNameMapper: {
+    '^@renderer/(.*)$': '<rootDir>/src/$1',
+    '^@core/(.*)$': '<rootDir>/../core/src/$1',
     '^@diagrammatic-lab/core$': '<rootDir>/../core/src/index.ts'
   },
   collectCoverageFrom: ['src/**/*.ts', '!src/index.ts'],

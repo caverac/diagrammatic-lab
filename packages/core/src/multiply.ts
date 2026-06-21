@@ -19,7 +19,7 @@ import {
   type Endpoint,
   type TLDiagram,
   type TLProduct
-} from './diagram'
+} from '@core/diagram'
 
 /**
  * Multiply two diagrams of equal rank. Returns the resulting basis diagram

@@ -1,4 +1,4 @@
-import { renderMath } from '../math'
+import { renderMath } from '@/math'
 
 /** Typeset an inline (or display) LaTeX fragment with KaTeX. */
 export interface MathProps {

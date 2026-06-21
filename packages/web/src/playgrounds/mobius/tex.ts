@@ -1,6 +1,6 @@
 /** Mobius-specific LaTeX fragments, rendered by the shared `<Math>`. */
 
-import { type GroupId, type MobiusClass } from './model'
+import { type GroupId, type MobiusClass } from '@diagrammatic-lab/core'
 
 /**
  * LaTeX for a finite rotation group. The cyclic and dihedral families take the

@@ -1,4 +1,4 @@
-import { getDomainConfig } from '../src/lib/domains'
+import { getDomainConfig } from '@infra/lib/domains'
 
 describe('getDomainConfig', () => {
   it('serves the apex and www in production', () => {

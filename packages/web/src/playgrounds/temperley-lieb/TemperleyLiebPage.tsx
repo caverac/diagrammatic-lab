@@ -1,12 +1,18 @@
 import { useMemo, useState } from 'react'
 
-import { Math } from '../../components/Math'
-
-import { BasisPalette } from './components/BasisPalette'
-import { ProductPanel, type ExportFormat } from './components/ProductPanel'
-import { type SlotId } from './dnd'
-import { buildExplorerState, computeProduct, type DiagramView } from './model'
-import { temperleyLiebTex } from './tex'
+import { Math } from '@/components/Math'
+import { BasisPalette } from '@/playgrounds/temperley-lieb/components/BasisPalette'
+import {
+  ProductPanel,
+  type ExportFormat
+} from '@/playgrounds/temperley-lieb/components/ProductPanel'
+import { type SlotId } from '@/playgrounds/temperley-lieb/dnd'
+import {
+  buildExplorerState,
+  computeProduct,
+  type DiagramView
+} from '@/playgrounds/temperley-lieb/model'
+import { temperleyLiebTex } from '@/playgrounds/temperley-lieb/tex'
 
 const RANKS = [1, 2, 3, 4, 5] as const
 

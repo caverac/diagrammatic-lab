@@ -1,30 +1,27 @@
-import { useEffect, useMemo, useRef, useState, type PointerEvent, type ReactNode } from 'react'
-
-import { Math } from '../../components/Math'
-
-import { KaleidoscopeSphere } from './components/KaleidoscopeSphere'
 import {
+  axisCensus,
   buildGroup,
   classifyMobius,
   orbit,
+  polyhedronVEF,
   polytopeEdges,
   quatMul,
   quatToMobius,
   representativeRotation,
   rotationQuat,
-  traceMobius,
-  vec3,
-  type GroupId,
-  type Quaternion
-} from './model'
-import {
-  axisCensus,
-  polyhedronVEF,
   schwarzTiling,
   seedFor,
   stabilizerOrder,
+  traceMobius,
+  vec3,
+  type GroupId,
+  type Quaternion,
   type SeedPreset
-} from './symmetry'
+} from '@diagrammatic-lab/core'
+import { useEffect, useMemo, useRef, useState, type PointerEvent, type ReactNode } from 'react'
+
+import { Math } from '@/components/Math'
+import { KaleidoscopeSphere } from '@/playgrounds/mobius/components/KaleidoscopeSphere'
 import {
   classLabel,
   complexTex,
@@ -35,7 +32,7 @@ import {
   presentationTex,
   schwarzSymbol,
   solidName
-} from './tex'
+} from '@/playgrounds/mobius/tex'
 
 const GROUP_IDS: readonly GroupId[] = [
   'cyclic',

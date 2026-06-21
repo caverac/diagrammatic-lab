@@ -1,4 +1,4 @@
-import { resolveInitialTheme, toggleTheme } from '../src/theme'
+import { resolveInitialTheme, toggleTheme } from '@/theme'
 
 describe('resolveInitialTheme', () => {
   it('honours an explicitly stored choice', () => {

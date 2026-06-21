@@ -1,4 +1,4 @@
-import { diagramEquals, generator, identity, multiply, type TLDiagram } from '../src'
+import { diagramEquals, generator, identity, multiply, type TLDiagram } from '@core/.'
 
 /** Helper: chain a left-to-right product, accumulating the loop count. */
 function product(first: TLDiagram, ...rest: TLDiagram[]): { loops: number; diagram: TLDiagram } {

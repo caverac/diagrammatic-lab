@@ -4,7 +4,12 @@
     "outDir": "./dist",
     "rootDir": "./src",
     "composite": true,
-    "types": ["node"]
+    "types": ["node"],
+    "paths": {
+      "@examples/*": ["./src/*"],
+      "@core/*": ["../core/src/*"],
+      "@renderer/*": ["../renderer/src/*"]
+    }
   },
   "references": [{ "path": "../core" }, { "path": "../renderer" }],
   "include": ["src/**/*"],

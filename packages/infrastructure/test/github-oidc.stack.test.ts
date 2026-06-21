@@ -1,7 +1,7 @@
 import * as cdk from 'aws-cdk-lib'
 import { Match, Template } from 'aws-cdk-lib/assertions'
 
-import { GitHubOIDCStack } from '../src/lib/github-oidc.stack'
+import { GitHubOIDCStack } from '@infra/lib/github-oidc.stack'
 
 describe('GitHubOIDCStack', () => {
   let template: Template

@@ -1,6 +1,5 @@
-import { type Theme } from '../theme'
-
-import { LogoMark, MenuIcon, MoonIcon, SunIcon } from './icons'
+import { LogoMark, MenuIcon, MoonIcon, SunIcon } from '@/components/icons'
+import { type Theme } from '@/theme'
 
 export interface NavBarProps {
   readonly theme: Theme

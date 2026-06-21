@@ -1,6 +1,5 @@
 import { generator, identity } from '@diagrammatic-lab/core'
-
-import { defaultLayout, toSvg, toTikz } from '../src'
+import { defaultLayout, toSvg, toTikz } from '@renderer/.'
 
 describe('toSvg', () => {
   it('emits a well-formed SVG with a path and nodes per arc', () => {

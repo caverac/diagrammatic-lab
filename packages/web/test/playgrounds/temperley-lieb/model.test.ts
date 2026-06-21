@@ -1,10 +1,6 @@
 import { catalan, generator, identity } from '@diagrammatic-lab/core'
 
-import {
-  buildExplorerState,
-  computeProduct,
-  viewOf
-} from '../../../src/playgrounds/temperley-lieb/model'
+import { buildExplorerState, computeProduct, viewOf } from '@/playgrounds/temperley-lieb/model'
 
 describe('viewOf', () => {
   it('pairs a diagram with its SVG', () => {

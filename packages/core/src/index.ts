@@ -1,13 +1,12 @@
 /**
  * `@diagrammatic-lab/core` - a pure, UI-independent algebra engine for
- * Temperley-Lieb diagrams.
- *
- * The public surface: the {@link TLDiagram} data model and its constructors,
- * {@link validate | validation}, {@link catalan | Catalan enumeration} of the
- * basis, and {@link multiply | diagram multiplication}.
+ * diagrammatic algebra. It carries the math for every playground - Temperley-Lieb
+ * diagrams, the Mobius / finite-group machinery, and the Coxeter (symmetric
+ * group) combinatorics - with no UI or DOM dependencies.
  */
 
-export type { Arc, Endpoint, Row, TLDiagram, TLProduct } from './diagram'
+// Temperley-Lieb diagrams.
+export type { Arc, Endpoint, Row, TLDiagram, TLProduct } from '@core/diagram'
 export {
   boundaryIndex,
   diagram,
@@ -18,11 +17,18 @@ export {
   fromBoundaryIndex,
   generator,
   identity
-} from './diagram'
+} from '@core/diagram'
 
-export type { ValidationResult } from './validate'
-export { isPlanar, isValidTLDiagram, validate } from './validate'
+export type { ValidationResult } from '@core/validate'
+export { isPlanar, isValidTLDiagram, validate } from '@core/validate'
 
-export { catalan, enumerateBasis } from './catalan'
+export { catalan, enumerateBasis } from '@core/catalan'
 
-export { multiply } from './multiply'
+export { multiply } from '@core/multiply'
+
+// Mobius transformations and the finite subgroups of PSL(2, C).
+export * from '@core/mobius'
+export * from '@core/mobius-symmetry'
+
+// Coxeter groups: the symmetric group S_n, length, reduced words, Bruhat order.
+export * from '@core/coxeter'

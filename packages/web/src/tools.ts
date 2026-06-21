@@ -30,7 +30,7 @@ export const TOOLS: readonly ToolMeta[] = [
     id: 'coxeter',
     name: 'Coxeter Groups',
     tagline: 'Reduced words, length, and Bruhat order in $S_n$',
-    status: 'coming-soon'
+    status: 'available'
   },
   {
     id: 'kazhdan-lusztig',

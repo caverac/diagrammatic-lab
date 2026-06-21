@@ -1,5 +1,4 @@
 import { endpoint, generator } from '@diagrammatic-lab/core'
-
 import {
   arcGeometry,
   canvasSize,
@@ -7,7 +6,7 @@ import {
   diagramGeometry,
   pointOf,
   type LayoutOptions
-} from '../src'
+} from '@renderer/.'
 
 const layout: LayoutOptions = defaultLayout
 

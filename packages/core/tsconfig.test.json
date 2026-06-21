@@ -8,7 +8,10 @@
     "composite": false,
     "isolatedModules": true,
     "noEmit": true,
-    "types": ["jest", "node"]
+    "types": ["jest", "node"],
+    "paths": {
+      "@core/*": ["./src/*"]
+    }
   },
   "include": ["src/**/*", "test/**/*"]
 }

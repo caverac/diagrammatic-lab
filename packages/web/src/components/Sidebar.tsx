@@ -1,5 +1,5 @@
-import { HOME_ROUTE, toHash } from '../router'
-import { TOOLS } from '../tools'
+import { HOME_ROUTE, toHash } from '@/router'
+import { TOOLS } from '@/tools'
 
 interface SidebarLinkProps {
   readonly href: string

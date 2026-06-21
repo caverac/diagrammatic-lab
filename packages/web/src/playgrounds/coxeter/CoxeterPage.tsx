@@ -99,7 +99,7 @@ export function CoxeterPage() {
           />
         </div>
 
-        <dl className="grid w-full grid-cols-[auto_1fr] gap-x-6 gap-y-3 text-sm lg:w-auto lg:min-w-60">
+        <dl className="grid w-full grid-cols-[auto_1fr] gap-x-6 gap-y-3 text-sm lg:w-80 lg:shrink-0">
           <dt className="text-slate-500">Permutation</dt>
           <dd className="font-mono font-semibold">{oneLine(node.perm)}</dd>
 
@@ -136,7 +136,7 @@ export function CoxeterPage() {
           </dd>
 
           <dt className="self-start text-slate-500">Wiring</dt>
-          <dd>
+          <dd className="min-w-0">
             <WiringDiagram n={n} word={word} size={320} />
           </dd>
         </dl>

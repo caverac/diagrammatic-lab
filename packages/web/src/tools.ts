@@ -36,7 +36,7 @@ export const TOOLS: readonly ToolMeta[] = [
     id: 'kazhdan-lusztig',
     name: 'Kazhdan-Lusztig',
     tagline: 'Bruhat intervals and the polynomials $P_{x,y}(q)$',
-    status: 'coming-soon'
+    status: 'available'
   },
   {
     id: 'rewriting',

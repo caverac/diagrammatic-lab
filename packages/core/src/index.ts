@@ -32,3 +32,6 @@ export * from '@core/mobius-symmetry'
 
 // Coxeter groups: the symmetric group S_n, length, reduced words, Bruhat order.
 export * from '@core/coxeter'
+
+// Kazhdan-Lusztig polynomials P_{x,y}(q).
+export * from '@core/kl'

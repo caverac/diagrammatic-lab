@@ -5,7 +5,7 @@
 
 import katex from 'katex'
 
-/** Render a LaTeX string to KaTeX HTML. Invalid input renders in error colour
+/** Render a LaTeX string to KaTeX HTML. Invalid input renders in error color
  *  rather than throwing, so a typo never blanks the page. */
 export function renderMath(tex: string, displayMode: boolean): string {
   return katex.renderToString(tex, { throwOnError: false, displayMode })

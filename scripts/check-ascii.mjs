@@ -12,20 +12,21 @@
  */
 
 import { execSync } from 'node:child_process'
-import { readFileSync } from 'node:fs'
+import { existsSync, readFileSync } from 'node:fs'
 
 const CODE_EXTENSIONS = ['ts', 'tsx', 'js', 'jsx', 'mjs', 'cjs', 'css', 'json', 'yml', 'yaml']
 const EXTENSION_PATTERN = new RegExp(`\\.(${CODE_EXTENSIONS.join('|')})$`)
 
-/** The source files to scan: the given arguments, or all tracked code files. */
+/**
+ * The source files to scan: the given arguments, or all tracked code files.
+ * Files that no longer exist (e.g. staged deletions) are skipped, since
+ * `git ls-files` can list them.
+ */
 function filesToCheck() {
   const args = process.argv.slice(2)
-  if (args.length > 0) {
-    return args.filter((file) => EXTENSION_PATTERN.test(file))
-  }
-  return execSync('git ls-files', { encoding: 'utf8' })
-    .split('\n')
-    .filter((file) => file !== '' && EXTENSION_PATTERN.test(file))
+  const candidates =
+    args.length > 0 ? args : execSync('git ls-files', { encoding: 'utf8' }).split('\n')
+  return candidates.filter((file) => EXTENSION_PATTERN.test(file) && existsSync(file))
 }
 
 /** Collect every non-ASCII character in a file as `{ line, col, char }`. */

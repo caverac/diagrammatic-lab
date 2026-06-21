@@ -35,3 +35,6 @@ export * from '@core/coxeter'
 
 // Kazhdan-Lusztig polynomials P_{x,y}(q).
 export * from '@core/kl'
+
+// Diagrammatic rewriting: reducing a Temperley-Lieb word to normal form.
+export * from '@core/rewriting'

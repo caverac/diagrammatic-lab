@@ -9,6 +9,7 @@ import { HomePage } from '@/pages/HomePage'
 import { CoxeterPage } from '@/playgrounds/coxeter/CoxeterPage'
 import { KazhdanLusztigPage } from '@/playgrounds/kazhdan-lusztig/KazhdanLusztigPage'
 import { MobiusPage } from '@/playgrounds/mobius/MobiusPage'
+import { RewritingPage } from '@/playgrounds/rewriting/RewritingPage'
 import { TemperleyLiebPage } from '@/playgrounds/temperley-lieb/TemperleyLiebPage'
 import { documentTitle, findTool } from '@/tools'
 
@@ -24,6 +25,9 @@ function renderRoute(route: string): ReactElement {
   }
   if (route === 'kazhdan-lusztig') {
     return <KazhdanLusztigPage />
+  }
+  if (route === 'rewriting') {
+    return <RewritingPage />
   }
   const tool = findTool(route)
   if (tool) {

@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/caverac/diagrammatic-lab/compare/v1.6.0...v1.7.0) (2026-06-21)
+
+
+### Features
+
+* **playgrounds:** diagram rewriting draft ([2e67612](https://github.com/caverac/diagrammatic-lab/commit/2e67612c82153d31be5930da3ff0df937936dd20))
+
 # [1.6.0](https://github.com/caverac/diagrammatic-lab/compare/v1.5.1...v1.6.0) (2026-06-21)
 
 

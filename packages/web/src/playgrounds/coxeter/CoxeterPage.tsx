@@ -89,8 +89,8 @@ export function CoxeterPage() {
         </span>
       </section>
 
-      <div className="flex flex-wrap items-start gap-8">
-        <div className="min-w-0 flex-1 rounded-xl border border-slate-200 bg-white p-3 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+      <div className="flex flex-col gap-8 lg:flex-row lg:items-start">
+        <div className="w-full rounded-xl border border-slate-200 bg-white p-3 shadow-sm lg:min-w-0 lg:flex-1 dark:border-slate-800 dark:bg-slate-900">
           <BruhatDiagram
             graph={graph}
             size={680}
@@ -100,9 +100,9 @@ export function CoxeterPage() {
           />
         </div>
 
-        <dl className="grid min-w-60 grid-cols-[auto_1fr] gap-x-6 gap-y-3 text-sm">
+        <dl className="grid w-full grid-cols-[auto_1fr] gap-x-6 gap-y-3 text-sm lg:w-auto lg:min-w-60">
           <dt className="text-slate-500">Permutation</dt>
-          <dd className="font-mono text-lg font-semibold">{oneLine(node.perm)}</dd>
+          <dd className="font-mono font-semibold">{oneLine(node.perm)}</dd>
 
           <dt className="text-slate-500">Length</dt>
           <dd className="font-medium">
@@ -130,8 +130,8 @@ export function CoxeterPage() {
           <dd className="font-medium">
             {below.size} of {graph.nodes.length}
             {isLongest && (
-              <span className="ml-2 rounded-full bg-indigo-100 px-2 py-0.5 text-[10px] font-semibold tracking-wide text-indigo-700 uppercase dark:bg-indigo-950/50 dark:text-indigo-300">
-                w_0
+              <span className="ml-2 rounded-full bg-indigo-100 px-2 py-0.5 text-[11px] font-semibold text-indigo-700 dark:bg-indigo-950/50 dark:text-indigo-300">
+                <Math tex="w_0" />
               </span>
             )}
           </dd>

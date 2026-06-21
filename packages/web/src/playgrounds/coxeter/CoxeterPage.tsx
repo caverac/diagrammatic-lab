@@ -1,18 +1,18 @@
-import { useMemo, useState, type ReactNode } from 'react'
-
-import { Math } from '../../components/Math'
-
-import { BruhatDiagram } from './components/BruhatDiagram'
-import { WiringDiagram } from './components/WiringDiagram'
 import {
-  bruhatGraph,
   bruhatLeq,
   descents,
   longestElement,
   numReducedWords,
   oneLine,
   reducedWord
-} from './model'
+} from '@diagrammatic-lab/core'
+import { useMemo, useState, type ReactNode } from 'react'
+
+import { Math } from '../../components/Math'
+
+import { BruhatDiagram } from './components/BruhatDiagram'
+import { WiringDiagram } from './components/WiringDiagram'
+import { bruhatGraph } from './model'
 import { generatorTex, reducedWordTex } from './tex'
 
 const RANKS = [2, 3, 4] as const

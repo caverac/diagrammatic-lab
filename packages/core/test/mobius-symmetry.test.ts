@@ -6,7 +6,7 @@ import {
   rotationQuat,
   vec3,
   type GroupId
-} from '../../../src/playgrounds/mobius/model'
+} from '../src/mobius'
 import {
   axisCensus,
   axisOfRotation,
@@ -25,7 +25,7 @@ import {
   schwarzTiling,
   seedFor,
   stabilizerOrder
-} from '../../../src/playgrounds/mobius/symmetry'
+} from '../src/mobius-symmetry'
 
 /** Map an axis census to a plain `{ fold: count }` object for easy assertions. */
 function censusCounts(id: GroupId, n?: number): Record<number, number> {

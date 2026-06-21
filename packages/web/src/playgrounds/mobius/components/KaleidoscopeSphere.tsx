@@ -1,7 +1,12 @@
+import {
+  centroid3,
+  rotateVec3,
+  type AxisClass,
+  type Quaternion,
+  type SchwarzTriangle,
+  type Vec3
+} from '@diagrammatic-lab/core'
 import { useEffect, useRef } from 'react'
-
-import { rotateVec3, type Quaternion, type Vec3 } from '../model'
-import { centroid3, type AxisClass, type SchwarzTriangle } from '../symmetry'
 
 /**
  * The spherical kaleidoscope: the Schwarz-triangle tiling of a polyhedral group

@@ -42,7 +42,7 @@ diagrammatic-lab/
   packages/
     core/         # pure TypeScript algebra engine (no UI deps)
     renderer/     # SVG / TikZ rendering
-    web/          # browser Temperley–Lieb explorer (Vite + React)
+    web/          # browser (Vite + React)
     examples/     # worked examples from the book
     infrastructure/  # AWS CDK: S3 + CloudFront hosting and GitHub OIDC
 ```
@@ -83,7 +83,7 @@ unit-tested view-model (`web/src/model.ts`) that calls straight into `core` and
 
 Aligned with the book (see `notebooks/notes/logs/`):
 
-1. **Groups & Coxeter basics** — permutations, reduced words, length, Bruhat
+1. **Groups & Coxeter basics** — _(done)_ permutations, reduced words, length, Bruhat
    order for small $S_n$.
 2. **Catalan & Temperley–Lieb** _(done)_ — diagrams, multiplication, loop
    removal, basis visualization, and an interactive browser playground.

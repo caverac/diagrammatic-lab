@@ -1,3 +1,12 @@
+# [1.4.0](https://github.com/caverac/diagrammatic-lab/compare/v1.3.2...v1.4.0) (2026-06-21)
+
+
+### Features
+
+* **mobius:** added card with group details ([fccfccc](https://github.com/caverac/diagrammatic-lab/commit/fccfccc6407f5a459811267e2f223d169794c1e8))
+* **mobius:** added momentum to the sphere ([6f87320](https://github.com/caverac/diagrammatic-lab/commit/6f873205f47a106519f3fea1518ad32e08870437))
+* **web:** added mobius + finite groups playground ([659e7b6](https://github.com/caverac/diagrammatic-lab/commit/659e7b6495f99dd3a25abb1634b969072e997e92))
+
 ## [1.3.2](https://github.com/caverac/diagrammatic-lab/compare/v1.3.1...v1.3.2) (2026-06-19)
 
 

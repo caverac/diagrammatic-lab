@@ -21,7 +21,7 @@ describe('endpoints', () => {
 
   it('maps endpoints to boundary indices and back (clockwise)', () => {
     const rank = 3
-    // top row left→right, then bottom row right→left
+    // top row left->right, then bottom row right->left
     expect(boundaryIndex(rank, endpoint('top', 0))).toBe(0)
     expect(boundaryIndex(rank, endpoint('top', 2))).toBe(2)
     expect(boundaryIndex(rank, endpoint('bottom', 2))).toBe(3)

@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from 'react'
 import { resolveInitialTheme, THEME_STORAGE_KEY, toggleTheme, type Theme } from '../theme'
 
 /**
- * Manage the active colour theme: initialise from storage / system preference,
+ * Manage the active color theme: initialize from storage / system preference,
  * reflect it on `<html class="dark">`, and persist any change.
  */
 export function useTheme(): { theme: Theme; toggle: () => void } {

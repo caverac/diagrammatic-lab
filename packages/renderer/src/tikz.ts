@@ -1,4 +1,4 @@
-/** Render a Temperley–Lieb diagram to a LaTeX/TikZ `tikzpicture`. */
+/** Render a Temperley-Lieb diagram to a LaTeX/TikZ `tikzpicture`. */
 
 import { type TLDiagram } from '@diagrammatic-lab/core'
 

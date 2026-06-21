@@ -1,10 +1,10 @@
 /**
- * The data model for Temperley–Lieb diagrams.
+ * The data model for Temperley-Lieb diagrams.
  *
- * A Temperley–Lieb diagram of rank `n` is a planar (non-crossing) perfect
+ * A Temperley-Lieb diagram of rank `n` is a planar (non-crossing) perfect
  * matching of `2n` points: `n` on the top row and `n` on the bottom row, each
  * point joined to exactly one other by an arc. The set of such diagrams is a
- * basis of the Temperley–Lieb algebra `TL_n(δ)`, whose dimension is the
+ * basis of the Temperley-Lieb algebra `TL_n(delta)`, whose dimension is the
  * Catalan number `C_n`.
  */
 
@@ -20,7 +20,7 @@ export interface Endpoint {
 /** An arc joins two distinct endpoints. */
 export type Arc = readonly [Endpoint, Endpoint]
 
-/** A Temperley–Lieb diagram: a rank together with its `n` arcs. */
+/** A Temperley-Lieb diagram: a rank together with its `n` arcs. */
 export interface TLDiagram {
   readonly rank: number
   readonly arcs: readonly Arc[]
@@ -28,7 +28,7 @@ export interface TLDiagram {
 
 /**
  * The result of multiplying two diagrams: a single basis diagram scaled by a
- * power of the loop parameter `δ`. `D₁ · D₂ = δ^loops · diagram`.
+ * power of the loop parameter `delta`. `D_1 . D_2 = delta^loops . diagram`.
  */
 export interface TLProduct {
   readonly loops: number
@@ -47,8 +47,8 @@ export function endpointEquals(a: Endpoint, b: Endpoint): boolean {
 
 /**
  * Map an endpoint to its index along the boundary of the rectangle, walking
- * clockwise: across the top row left→right (`0 … n-1`), then down and back
- * across the bottom row right→left (`n … 2n-1`). This linearisation is what
+ * clockwise: across the top row left->right (`0 ... n-1`), then down and back
+ * across the bottom row right->left (`n ... 2n-1`). This linearisation is what
  * turns "planar" into the combinatorial condition of a non-crossing chord
  * diagram (see {@link isPlanar}).
  */
@@ -67,7 +67,7 @@ export function diagram(rank: number, arcs: readonly Arc[]): TLDiagram {
 }
 
 /**
- * The identity diagram `1 ∈ TL_n`: every top point joined straight down to the
+ * The identity diagram `1 in TL_n`: every top point joined straight down to the
  * bottom point in the same column.
  */
 export function identity(rank: number): TLDiagram {
@@ -79,7 +79,7 @@ export function identity(rank: number): TLDiagram {
 }
 
 /**
- * The Temperley–Lieb generator `e_i ∈ TL_n` (with `0 ≤ i ≤ n-2`): a "cup"
+ * The Temperley-Lieb generator `e_i in TL_n` (with `0 <= i <= n-2`): a "cup"
  * joining the top points `i, i+1`, a "cap" joining the bottom points `i, i+1`,
  * and a vertical through-strand in every other column.
  */

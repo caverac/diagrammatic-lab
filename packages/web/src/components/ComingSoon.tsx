@@ -20,7 +20,7 @@ export function ComingSoon({ tool }: ComingSoonProps) {
       <p className="mt-6 text-sm text-slate-500">
         This playground is on the roadmap. For now, explore the{' '}
         <a href="#/temperley-lieb" className="text-indigo-600 hover:underline dark:text-indigo-400">
-          Temperley–Lieb
+          Temperley-Lieb
         </a>{' '}
         module.
       </p>

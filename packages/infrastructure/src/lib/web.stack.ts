@@ -20,7 +20,7 @@ export interface WebStackProps extends cdk.StackProps {
   /**
    * ARN of a pre-issued ACM certificate (us-east-1) covering this
    * environment's domains. Issued and DNS-validated out of band because the
-   * Route53 hosted zone lives in a different account — see this package's
+   * Route53 hosted zone lives in a different account - see this package's
    * README.
    */
   readonly certificateArn: string
@@ -32,7 +32,7 @@ export interface WebStackProps extends cdk.StackProps {
  * Hosts the static web app: a private S3 bucket behind a CloudFront
  * distribution using a pre-issued ACM certificate. DNS is intentionally
  * out of scope (the zone is in another account); after deploying, point the
- * domains at the distribution by adding an alias record there — the alias
+ * domains at the distribution by adding an alias record there - the alias
  * target is the `DistributionDomainName` output.
  *
  * Must be deployed to `us-east-1` (CloudFront certificate requirement).

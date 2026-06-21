@@ -1,4 +1,4 @@
-/** Render a Temperley–Lieb diagram to a standalone SVG string. */
+/** Render a Temperley-Lieb diagram to a standalone SVG string. */
 
 import { type TLDiagram } from '@diagrammatic-lab/core'
 
@@ -12,7 +12,7 @@ import {
 } from './layout'
 
 // Use `currentColor` so the embedding context (e.g. a dark theme) controls the
-// ink colour via CSS `color`.
+// ink color via CSS `color`.
 function nodeCircle(p: Point): string {
   return `<circle cx="${p.x}" cy="${p.y}" r="3" fill="currentColor" />`
 }

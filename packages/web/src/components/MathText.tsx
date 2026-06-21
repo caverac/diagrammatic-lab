@@ -2,7 +2,7 @@ import { parseInlineMath } from '../math'
 
 import { Math } from './Math'
 
-/** Render a string that mixes prose with inline `$…$` LaTeX (typeset by KaTeX). */
+/** Render a string that mixes prose with inline `$...$` LaTeX (typeset by KaTeX). */
 export interface MathTextProps {
   readonly children: string
 }

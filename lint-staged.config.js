@@ -46,6 +46,8 @@ function findTestFiles(stagedFiles) {
 }
 
 module.exports = {
+  '*.{ts,tsx,js,jsx,mjs,cjs,css,json,yml,yaml}': 'node scripts/check-ascii.mjs',
+
   '*.{ts,tsx,js,jsx,mjs,cjs}': ['eslint --fix', 'prettier --write'],
 
   '*.{json,md,yml,yaml}': ['prettier --write'],

@@ -1,6 +1,6 @@
-/** Temperley–Lieb-specific LaTeX fragments, rendered by the shared `<Math>`. */
+/** Temperley-Lieb-specific LaTeX fragments, rendered by the shared `<Math>`. */
 
-/** The `δ` coefficient of a product, as LaTeX: `''`, `\delta`, or `\delta^{17}`. */
+/** The `delta` coefficient of a product, as LaTeX: `''`, `\delta`, or `\delta^{17}`. */
 export function coefficientTex(loops: number): string {
   if (loops === 0) {
     return ''
@@ -11,7 +11,7 @@ export function coefficientTex(loops: number): string {
   return `\\delta^{${loops}}`
 }
 
-/** LaTeX for the algebra `TL_n(δ)`. */
+/** LaTeX for the algebra `TL_n(delta)`. */
 export function temperleyLiebTex(rank: number): string {
   return `\\mathrm{TL}_{${rank}}(\\delta)`
 }

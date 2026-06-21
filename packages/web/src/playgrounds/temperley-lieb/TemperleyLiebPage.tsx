@@ -78,7 +78,7 @@ export function TemperleyLiebPage() {
   return (
     <div className="py-6">
       <header className="mb-8">
-        <h1 className="text-2xl font-bold tracking-tight">Temperley–Lieb Playground</h1>
+        <h1 className="text-2xl font-bold tracking-tight">Temperley-Lieb Playground</h1>
         <p className="mt-2 max-w-2xl leading-relaxed text-slate-600 dark:text-slate-400">
           Drag two basis diagrams of <Math tex={temperleyLiebTex(rank)} /> onto the slots below;
           their product is the diagram obtained by stacking, with one factor of{' '}

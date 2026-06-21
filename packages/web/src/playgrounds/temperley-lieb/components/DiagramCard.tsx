@@ -23,7 +23,7 @@ export function DiagramCard({ view, index, onSelect }: DiagramCardProps) {
           event.dataTransfer.effectAllowed = 'copy'
         }}
         onClick={() => onSelect(view)}
-        title={`basis diagram ${index + 1} — drag onto a slot`}
+        title={`basis diagram ${index + 1} - drag onto a slot`}
         className="flex h-24 w-full cursor-grab items-center justify-center overflow-hidden rounded-lg border border-slate-200 bg-white p-2 shadow-sm transition hover:border-indigo-400 hover:shadow-md active:cursor-grabbing dark:border-slate-700 dark:bg-slate-900 dark:hover:border-indigo-500"
       >
         <DiagramFigure svg={view.svg} />

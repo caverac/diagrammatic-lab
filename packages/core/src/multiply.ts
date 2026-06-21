@@ -1,11 +1,11 @@
 /**
- * Multiplication in the Temperley–Lieb algebra.
+ * Multiplication in the Temperley-Lieb algebra.
  *
- * To multiply `D₁ · D₂` we stack `D₁` on top of `D₂` and glue the bottom row of
- * `D₁` to the top row of `D₂`. Tracing the resulting strands gives a new
- * diagram on the outer boundary (the top of `D₁` and the bottom of `D₂`), while
+ * To multiply `D_1 . D_2` we stack `D_1` on top of `D_2` and glue the bottom row of
+ * `D_1` to the top row of `D_2`. Tracing the resulting strands gives a new
+ * diagram on the outer boundary (the top of `D_1` and the bottom of `D_2`), while
  * every closed loop that forms in the middle contributes one factor of the loop
- * parameter `δ`. Thus `D₁ · D₂ = δ^loops · D₃`.
+ * parameter `delta`. Thus `D_1 . D_2 = delta^loops . D_3`.
  *
  * Internally we build the gluing as a graph on `4n` vertices in which every
  * outer point has degree one and every middle point has degree two, so the
@@ -23,7 +23,7 @@ import {
 
 /**
  * Multiply two diagrams of equal rank. Returns the resulting basis diagram
- * together with the number of closed loops removed (the power of `δ`).
+ * together with the number of closed loops removed (the power of `delta`).
  */
 export function multiply(a: TLDiagram, b: TLDiagram): TLProduct {
   if (a.rank !== b.rank) {

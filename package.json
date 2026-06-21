@@ -2,7 +2,7 @@
   "name": "diagrammatic-lab",
   "version": "1.3.2",
   "private": true,
-  "description": "A semantic workbench for diagrammatic algebra — Temperley–Lieb diagrams, Coxeter groups, and Kazhdan–Lusztig theory",
+  "description": "A semantic workbench for diagrammatic algebra - Temperley-Lieb diagrams, Coxeter groups, and Kazhdan-Lusztig theory",
   "packageManager": "yarn@4.14.1",
   "workspaces": [
     "packages/*"
@@ -12,6 +12,7 @@
     "clean": "tsc -b --clean",
     "lint": "eslint --max-warnings 0",
     "lint:fix": "eslint --fix",
+    "check:ascii": "node scripts/check-ascii.mjs",
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
     "typecheck": "yarn workspaces foreach -Apt run typecheck",

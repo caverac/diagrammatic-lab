@@ -1,5 +1,5 @@
 /**
- * Validation of Temperley–Lieb diagrams.
+ * Validation of Temperley-Lieb diagrams.
  *
  * A list of arcs is a genuine `TL_n` basis diagram exactly when it is a
  * **planar perfect matching** of the `2n` boundary points: every point has
@@ -27,7 +27,7 @@ function isValidEndpoint(ep: Endpoint, rank: number): boolean {
  * Decide whether a diagram is planar, i.e. drawable in the rectangle with no
  * crossing arcs. Mapping endpoints to boundary indices (see
  * {@link boundaryIndex}) reduces this to the classical chord-diagram test: two
- * arcs `[a,b]` and `[c,d]` (each written low→high) cross precisely when their
+ * arcs `[a,b]` and `[c,d]` (each written low->high) cross precisely when their
  * endpoints interleave, `a < c < b < d`.
  */
 export function isPlanar(d: TLDiagram): boolean {
@@ -92,7 +92,7 @@ export function validate(d: TLDiagram): ValidationResult {
   return { valid: errors.length === 0, errors }
 }
 
-/** Whether `d` is a valid Temperley–Lieb basis diagram. */
+/** Whether `d` is a valid Temperley-Lieb basis diagram. */
 export function isValidTLDiagram(d: TLDiagram): boolean {
   return validate(d).valid
 }

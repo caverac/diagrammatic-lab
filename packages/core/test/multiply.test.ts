@@ -21,14 +21,14 @@ describe('multiply', () => {
     expect(diagramEquals(right.diagram, e0)).toBe(true)
   })
 
-  it('satisfies e_i · e_i = δ · e_i', () => {
+  it('satisfies e_i . e_i = delta . e_i', () => {
     const e0 = generator(3, 0)
     const result = multiply(e0, e0)
     expect(result.loops).toBe(1)
     expect(diagramEquals(result.diagram, e0)).toBe(true)
   })
 
-  it('satisfies e_i · e_{i±1} · e_i = e_i', () => {
+  it('satisfies e_i . e_{i+-1} . e_i = e_i', () => {
     const e0 = generator(3, 0)
     const e1 = generator(3, 1)
     const left = product(e0, e1, e0)
@@ -39,7 +39,7 @@ describe('multiply', () => {
     expect(diagramEquals(right.diagram, e1)).toBe(true)
   })
 
-  it('satisfies e_i · e_j = e_j · e_i when |i - j| ≥ 2', () => {
+  it('satisfies e_i . e_j = e_j . e_i when |i - j| >= 2', () => {
     const e0 = generator(4, 0)
     const e2 = generator(4, 2)
     const left = multiply(e0, e2)

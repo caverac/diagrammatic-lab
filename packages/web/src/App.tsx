@@ -6,12 +6,16 @@ import { Sidebar } from './components/Sidebar'
 import { useHashRoute } from './hooks/useHashRoute'
 import { useTheme } from './hooks/useTheme'
 import { HomePage } from './pages/HomePage'
+import { MobiusPage } from './playgrounds/mobius/MobiusPage'
 import { TemperleyLiebPage } from './playgrounds/temperley-lieb/TemperleyLiebPage'
 import { documentTitle, findTool } from './tools'
 
 function renderRoute(route: string): ReactElement {
   if (route === 'temperley-lieb') {
     return <TemperleyLiebPage />
+  }
+  if (route === 'mobius') {
+    return <MobiusPage />
   }
   const tool = findTool(route)
   if (tool) {

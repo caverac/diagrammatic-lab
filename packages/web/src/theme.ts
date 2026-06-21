@@ -1,4 +1,4 @@
-/** Pure colour-theme logic, kept free of the DOM so it can be unit-tested. */
+/** Pure color-theme logic, kept free of the DOM so it can be unit-tested. */
 
 export type Theme = 'light' | 'dark'
 

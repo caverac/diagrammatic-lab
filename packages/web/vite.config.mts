@@ -20,6 +20,9 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+      '@core': fileURLToPath(new URL('../core/src', import.meta.url)),
+      '@renderer': fileURLToPath(new URL('../renderer/src', import.meta.url)),
       '@diagrammatic-lab/core': fileURLToPath(new URL('../core/src/index.ts', import.meta.url)),
       '@diagrammatic-lab/renderer': fileURLToPath(
         new URL('../renderer/src/index.ts', import.meta.url)

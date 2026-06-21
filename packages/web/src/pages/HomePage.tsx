@@ -1,6 +1,6 @@
-import { MathText } from '../components/MathText'
-import { toHash } from '../router'
-import { TOOLS, type ToolMeta } from '../tools'
+import { MathText } from '@/components/MathText'
+import { toHash } from '@/router'
+import { TOOLS, type ToolMeta } from '@/tools'
 
 function ToolCard({ tool }: { tool: ToolMeta }) {
   const available = tool.status === 'available'

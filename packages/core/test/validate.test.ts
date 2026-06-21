@@ -7,7 +7,7 @@ import {
   isValidTLDiagram,
   validate,
   type Arc
-} from '../src'
+} from '@core/.'
 
 const crossing: Arc[] = [
   [endpoint('top', 0), endpoint('bottom', 1)],

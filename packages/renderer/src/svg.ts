@@ -9,7 +9,7 @@ import {
   pointOf,
   type LayoutOptions,
   type Point
-} from './layout'
+} from '@renderer/layout'
 
 // Use `currentColor` so the embedding context (e.g. a dark theme) controls the
 // ink color via CSS `color`.

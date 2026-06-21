@@ -8,7 +8,7 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "tsc -b",
+    "build": "tsc -b && tsc-alias -p packages/core/tsconfig.json && tsc-alias -p packages/renderer/tsconfig.json && tsc-alias -p packages/examples/tsconfig.json",
     "clean": "tsc -b --clean",
     "lint": "eslint --max-warnings 0",
     "lint:fix": "eslint --fix",
@@ -36,6 +36,7 @@
     "lint-staged": "^17.0.7",
     "prettier": "^3.8.4",
     "semantic-release": "^25.0.5",
+    "tsc-alias": "^1.8.17",
     "typescript": "^6.0.3"
   },
   "engines": {

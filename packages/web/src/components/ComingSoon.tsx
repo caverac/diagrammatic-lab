@@ -1,6 +1,5 @@
-import { type ToolMeta } from '../tools'
-
-import { MathText } from './MathText'
+import { MathText } from '@/components/MathText'
+import { type ToolMeta } from '@/tools'
 
 /** Placeholder shown for a registered-but-not-yet-built playground. */
 export interface ComingSoonProps {

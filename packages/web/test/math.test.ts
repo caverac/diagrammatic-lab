@@ -1,4 +1,4 @@
-import { parseInlineMath, renderMath } from '../src/math'
+import { parseInlineMath, renderMath } from '@/math'
 
 describe('parseInlineMath', () => {
   it('returns a single text run when there is no math', () => {

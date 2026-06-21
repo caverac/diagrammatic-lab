@@ -8,12 +8,11 @@ import {
 } from '@diagrammatic-lab/core'
 import { useMemo, useState, type ReactNode } from 'react'
 
-import { Math } from '../../components/Math'
-
-import { BruhatDiagram } from './components/BruhatDiagram'
-import { WiringDiagram } from './components/WiringDiagram'
-import { bruhatGraph } from './model'
-import { generatorTex, reducedWordTex } from './tex'
+import { Math } from '@/components/Math'
+import { BruhatDiagram } from '@/playgrounds/coxeter/components/BruhatDiagram'
+import { WiringDiagram } from '@/playgrounds/coxeter/components/WiringDiagram'
+import { bruhatGraph } from '@/playgrounds/coxeter/model'
+import { generatorTex, reducedWordTex } from '@/playgrounds/coxeter/tex'
 
 const RANKS = [2, 3, 4] as const
 

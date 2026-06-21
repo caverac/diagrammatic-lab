@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 import * as cdk from 'aws-cdk-lib'
 
-import { parseEnv } from '../env'
-import { GitHubOIDCStack } from '../lib/github-oidc.stack'
-import { WebStack } from '../lib/web.stack'
+import { parseEnv } from '@infra/env'
+import { GitHubOIDCStack } from '@infra/lib/github-oidc.stack'
+import { WebStack } from '@infra/lib/web.stack'
 
 const env = parseEnv(process.env)
 

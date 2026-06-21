@@ -6,7 +6,10 @@
     "declarationMap": false,
     "noEmit": true,
     "resolveJsonModule": true,
-    "types": ["node"]
+    "types": ["node"],
+    "paths": {
+      "@infra/*": ["./src/*"]
+    }
   },
   "include": ["src/**/*"]
 }

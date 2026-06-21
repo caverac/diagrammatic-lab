@@ -1,6 +1,5 @@
-import { type DiagramView } from '../model'
-
-import { DiagramCard } from './DiagramCard'
+import { DiagramCard } from '@/playgrounds/temperley-lieb/components/DiagramCard'
+import { type DiagramView } from '@/playgrounds/temperley-lieb/model'
 
 /** The palette of all `TL_n` basis diagrams, each draggable onto a slot. */
 export interface BasisPaletteProps {

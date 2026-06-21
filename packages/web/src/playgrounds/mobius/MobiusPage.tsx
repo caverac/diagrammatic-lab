@@ -20,9 +20,8 @@ import {
 } from '@diagrammatic-lab/core'
 import { useEffect, useMemo, useRef, useState, type PointerEvent, type ReactNode } from 'react'
 
-import { Math } from '../../components/Math'
-
-import { KaleidoscopeSphere } from './components/KaleidoscopeSphere'
+import { Math } from '@/components/Math'
+import { KaleidoscopeSphere } from '@/playgrounds/mobius/components/KaleidoscopeSphere'
 import {
   classLabel,
   complexTex,
@@ -33,7 +32,7 @@ import {
   presentationTex,
   schwarzSymbol,
   solidName
-} from './tex'
+} from '@/playgrounds/mobius/tex'
 
 const GROUP_IDS: readonly GroupId[] = [
   'cyclic',

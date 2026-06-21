@@ -1,4 +1,4 @@
-import { parseEnv } from '../src/env'
+import { parseEnv } from '@infra/env'
 
 const base = {
   ENVIRONMENT: 'development',

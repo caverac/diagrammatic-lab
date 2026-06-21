@@ -8,7 +8,7 @@ import {
   presentationTex,
   schwarzSymbol,
   solidName
-} from '../../../src/playgrounds/mobius/tex'
+} from '@/playgrounds/mobius/tex'
 
 describe('groupTex', () => {
   it('renders each family, parameterized where relevant', () => {

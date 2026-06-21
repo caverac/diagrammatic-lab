@@ -8,6 +8,9 @@ module.exports = {
     '^.+\\.ts$': ['ts-jest', { tsconfig: 'tsconfig.test.json' }]
   },
   moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1',
+    '^@core/(.*)$': '<rootDir>/../core/src/$1',
+    '^@renderer/(.*)$': '<rootDir>/../renderer/src/$1',
     '^@diagrammatic-lab/core$': '<rootDir>/../core/src/index.ts',
     '^@diagrammatic-lab/renderer$': '<rootDir>/../renderer/src/index.ts'
   },

@@ -1,4 +1,4 @@
-import { type DeploymentEnvironment } from '../env'
+import { type DeploymentEnvironment } from '@infra/env'
 
 /** The registrable domain whose Route53 hosted zone hosts every environment. */
 export const ROOT_DOMAIN = 'diagrammatic-lab.com'

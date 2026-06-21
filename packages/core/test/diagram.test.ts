@@ -9,7 +9,7 @@ import {
   generator,
   identity,
   type Arc
-} from '../src'
+} from '@core/.'
 
 describe('endpoints', () => {
   it('constructs and compares endpoints', () => {

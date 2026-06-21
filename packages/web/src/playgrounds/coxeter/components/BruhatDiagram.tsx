@@ -1,6 +1,6 @@
 import { oneLine } from '@diagrammatic-lab/core'
 
-import { type BruhatGraph } from '../model'
+import { type BruhatGraph } from '@/playgrounds/coxeter/model'
 
 /**
  * The Bruhat order of S_n as an interactive Hasse diagram. Nodes are ranked by

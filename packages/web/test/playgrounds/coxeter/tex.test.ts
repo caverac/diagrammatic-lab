@@ -1,4 +1,4 @@
-import { generatorTex, reducedWordTex } from '../../../src/playgrounds/coxeter/tex'
+import { generatorTex, reducedWordTex } from '@/playgrounds/coxeter/tex'
 
 describe('generatorTex', () => {
   it('renders a 1-indexed generator', () => {

@@ -2,7 +2,13 @@
 
 import { type TLDiagram } from '@diagrammatic-lab/core'
 
-import { arcGeometry, defaultLayout, pointOf, type LayoutOptions, type Point } from './layout'
+import {
+  arcGeometry,
+  defaultLayout,
+  pointOf,
+  type LayoutOptions,
+  type Point
+} from '@renderer/layout'
 
 // TikZ's y-axis points up, the opposite of SVG, so flip when emitting.
 function tikz(p: Point): string {

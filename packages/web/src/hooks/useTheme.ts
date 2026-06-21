@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 
-import { resolveInitialTheme, THEME_STORAGE_KEY, toggleTheme, type Theme } from '../theme'
+import { resolveInitialTheme, THEME_STORAGE_KEY, toggleTheme, type Theme } from '@/theme'
 
 /**
  * Manage the active color theme: initialize from storage / system preference,

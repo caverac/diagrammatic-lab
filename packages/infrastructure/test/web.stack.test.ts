@@ -5,8 +5,8 @@ import * as path from 'node:path'
 import * as cdk from 'aws-cdk-lib'
 import { Match, Template } from 'aws-cdk-lib/assertions'
 
-import { type DeploymentEnvironment } from '../src/env'
-import { WebStack } from '../src/lib/web.stack'
+import { type DeploymentEnvironment } from '@infra/env'
+import { WebStack } from '@infra/lib/web.stack'
 
 const CERTIFICATE_ARN = 'arn:aws:acm:us-east-1:123456789012:certificate/abc-123'
 

@@ -7,6 +7,9 @@ module.exports = {
   transform: {
     '^.+\\.ts$': ['ts-jest', { tsconfig: 'tsconfig.test.json' }]
   },
+  moduleNameMapper: {
+    '^@core/(.*)$': '<rootDir>/src/$1'
+  },
   collectCoverageFrom: ['src/**/*.ts', '!src/index.ts'],
   coverageThreshold: {
     global: {

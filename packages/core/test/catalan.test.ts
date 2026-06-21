@@ -1,4 +1,4 @@
-import { catalan, diagramKey, enumerateBasis, isValidTLDiagram } from '../src'
+import { catalan, diagramKey, enumerateBasis, isValidTLDiagram } from '@core/.'
 
 describe('catalan', () => {
   it('matches the known Catalan sequence', () => {

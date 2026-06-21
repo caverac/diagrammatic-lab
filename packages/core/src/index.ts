@@ -6,7 +6,7 @@
  */
 
 // Temperley-Lieb diagrams.
-export type { Arc, Endpoint, Row, TLDiagram, TLProduct } from './diagram'
+export type { Arc, Endpoint, Row, TLDiagram, TLProduct } from '@core/diagram'
 export {
   boundaryIndex,
   diagram,
@@ -17,18 +17,18 @@ export {
   fromBoundaryIndex,
   generator,
   identity
-} from './diagram'
+} from '@core/diagram'
 
-export type { ValidationResult } from './validate'
-export { isPlanar, isValidTLDiagram, validate } from './validate'
+export type { ValidationResult } from '@core/validate'
+export { isPlanar, isValidTLDiagram, validate } from '@core/validate'
 
-export { catalan, enumerateBasis } from './catalan'
+export { catalan, enumerateBasis } from '@core/catalan'
 
-export { multiply } from './multiply'
+export { multiply } from '@core/multiply'
 
 // Mobius transformations and the finite subgroups of PSL(2, C).
-export * from './mobius'
-export * from './mobius-symmetry'
+export * from '@core/mobius'
+export * from '@core/mobius-symmetry'
 
 // Coxeter groups: the symmetric group S_n, length, reduced words, Bruhat order.
-export * from './coxeter'
+export * from '@core/coxeter'

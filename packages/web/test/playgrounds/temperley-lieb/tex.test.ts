@@ -1,4 +1,4 @@
-import { coefficientTex, temperleyLiebTex } from '../../../src/playgrounds/temperley-lieb/tex'
+import { coefficientTex, temperleyLiebTex } from '@/playgrounds/temperley-lieb/tex'
 
 describe('coefficientTex', () => {
   it('formats the power of delta as LaTeX', () => {

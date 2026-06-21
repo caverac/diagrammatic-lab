@@ -1,11 +1,10 @@
 import { useState } from 'react'
 
-import { Math } from '../../../components/Math'
-import { DIAGRAM_INDEX_MIME, parseDropIndex, type SlotId } from '../dnd'
-import { type DiagramView, type ProductView } from '../model'
-import { coefficientTex } from '../tex'
-
-import { DiagramFigure } from './DiagramFigure'
+import { Math } from '@/components/Math'
+import { DiagramFigure } from '@/playgrounds/temperley-lieb/components/DiagramFigure'
+import { DIAGRAM_INDEX_MIME, parseDropIndex, type SlotId } from '@/playgrounds/temperley-lieb/dnd'
+import { type DiagramView, type ProductView } from '@/playgrounds/temperley-lieb/model'
+import { coefficientTex } from '@/playgrounds/temperley-lieb/tex'
 
 export type ExportFormat = 'svg' | 'tikz'
 

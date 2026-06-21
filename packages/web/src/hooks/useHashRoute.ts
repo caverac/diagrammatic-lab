@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { parseHash } from '../router'
+import { parseHash } from '@/router'
 
 /** Track the active hash route, updating on browser navigation. */
 export function useHashRoute(): string {

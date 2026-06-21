@@ -6,7 +6,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc -b",
+    "build": "tsc -b && tsc-alias -p tsconfig.json",
     "typecheck": "tsc -b && tsc -p tsconfig.test.json --noEmit",
     "test": "jest --coverage",
     "test:watch": "jest --watch"

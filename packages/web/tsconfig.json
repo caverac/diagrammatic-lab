@@ -12,6 +12,9 @@
     "noEmit": true,
     "allowImportingTsExtensions": true,
     "paths": {
+      "@/*": ["./src/*"],
+      "@core/*": ["../core/src/*"],
+      "@renderer/*": ["../renderer/src/*"],
       "@diagrammatic-lab/core": ["../core/src/index.ts"],
       "@diagrammatic-lab/renderer": ["../renderer/src/index.ts"]
     }

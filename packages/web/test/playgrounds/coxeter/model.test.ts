@@ -1,4 +1,4 @@
-import { bruhatGraph } from '../../../src/playgrounds/coxeter/model'
+import { bruhatGraph } from '@/playgrounds/coxeter/model'
 
 describe('bruhatGraph layout', () => {
   it('ranks S_3 by length with the poset covers as edges', () => {

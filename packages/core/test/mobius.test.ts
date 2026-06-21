@@ -29,7 +29,7 @@ import {
   traceMobius,
   vec3,
   type Complex
-} from '../src/mobius'
+} from '@core/mobius'
 
 const c = complex
 const I = quat(1, 0, 0, 0)

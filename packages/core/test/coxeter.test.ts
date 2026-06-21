@@ -12,7 +12,7 @@ import {
   symmetricGroup,
   timesGenerator,
   type Permutation
-} from '../src/coxeter'
+} from '@core/coxeter'
 
 /** Reconstruct a permutation by applying a word of generators to the identity. */
 function applyWord(n: number, word: readonly number[]): Permutation {

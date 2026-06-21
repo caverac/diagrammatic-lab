@@ -7,7 +7,10 @@
     "isolatedModules": true,
     "noEmit": true,
     "resolveJsonModule": true,
-    "types": ["jest", "node"]
+    "types": ["jest", "node"],
+    "paths": {
+      "@infra/*": ["./src/*"]
+    }
   },
   "include": ["src/**/*", "test/**/*"]
 }

@@ -1,7 +1,6 @@
-import { DIAGRAM_INDEX_MIME } from '../dnd'
-import { type DiagramView } from '../model'
-
-import { DiagramFigure } from './DiagramFigure'
+import { DiagramFigure } from '@/playgrounds/temperley-lieb/components/DiagramFigure'
+import { DIAGRAM_INDEX_MIME } from '@/playgrounds/temperley-lieb/dnd'
+import { type DiagramView } from '@/playgrounds/temperley-lieb/model'
 
 /** A draggable palette diagram: a clipped thumbnail that reveals the full
  *  diagram in a popover on hover, and can be dragged onto an operand slot. */

@@ -7,6 +7,7 @@ import { useHashRoute } from '@/hooks/useHashRoute'
 import { useTheme } from '@/hooks/useTheme'
 import { HomePage } from '@/pages/HomePage'
 import { CoxeterPage } from '@/playgrounds/coxeter/CoxeterPage'
+import { KazhdanLusztigPage } from '@/playgrounds/kazhdan-lusztig/KazhdanLusztigPage'
 import { MobiusPage } from '@/playgrounds/mobius/MobiusPage'
 import { TemperleyLiebPage } from '@/playgrounds/temperley-lieb/TemperleyLiebPage'
 import { documentTitle, findTool } from '@/tools'
@@ -20,6 +21,9 @@ function renderRoute(route: string): ReactElement {
   }
   if (route === 'coxeter') {
     return <CoxeterPage />
+  }
+  if (route === 'kazhdan-lusztig') {
+    return <KazhdanLusztigPage />
   }
   const tool = findTool(route)
   if (tool) {

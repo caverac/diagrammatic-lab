@@ -1,4 +1,4 @@
-import { LogoMark, MenuIcon, MoonIcon, SunIcon } from '@/components/icons'
+import { GitHubIcon, LogoMark, MenuIcon, MoonIcon, SunIcon } from '@/components/icons'
 import { type Theme } from '@/theme'
 
 export interface NavBarProps {
@@ -28,11 +28,12 @@ export function NavBar({ theme, onToggleTheme, onMenuToggle }: NavBarProps) {
         <div className="ml-auto flex items-center gap-2">
           <a
             href="https://github.com/caverac/diagrammatic-lab"
-            className="group hidden flex-col items-end leading-tight sm:flex"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="GitHub repository"
+            className="group hidden flex-col items-center leading-tight sm:flex"
           >
-            <span className="text-sm text-slate-600 transition group-hover:text-slate-900 dark:text-slate-300 dark:group-hover:text-white">
-              GitHub
-            </span>
+            <GitHubIcon className="h-5 w-5 text-slate-600 transition group-hover:text-slate-900 dark:text-slate-300 dark:group-hover:text-white" />
             <span className="text-[10px] text-slate-400">v{__APP_VERSION__}</span>
           </a>
           <button
